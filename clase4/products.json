@@ -1,0 +1,17 @@
+[
+  {
+    "name": "cbdOil",
+    "price": 2500,
+    "id": 1
+  },
+  {
+    "name": "thcOil",
+    "price": 2800,
+    "id": 2
+  },
+  {
+    "name": "cbdCream",
+    "price": 4000,
+    "id": 3
+  }
+]
