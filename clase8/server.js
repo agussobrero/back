@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 
-const PORT = 8080
+const PORT = 3000
 
 const Container = require("./container")
 const container = new Container ("./products.json")
@@ -15,7 +15,7 @@ const server = app.listen(PORT, (rep, res) => {
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-app.use("/", (req, res) => res.sendFile(__dirname + "./public/index"))
+app.use("/", (req, res) => res.sendFile(__dirname + "/public/index.html"))
 
 app.get("/", (req, res) => {
     res.send("<h1>Funciona????</h1>")
@@ -39,6 +39,10 @@ app.get("/api/productos/:id", (req, res) => {
 })
 
 app.post("/api/productos", (req, res) => {
+    res.json({mensaje: "ok post"})
+})
+
+app.get("/api/productos", upload.single("foto"), (req, res) => {
     const file = req.file
     res.json({mensaje: "ok post"})
 })
