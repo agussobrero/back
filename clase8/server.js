@@ -1,9 +1,9 @@
 const express = require("express")
 const app = express()
 
-const PORT = 3000
+const PORT = 8080
 
-const Container = require("./container")
+const Container = require("./utils/container")
 const container = new Container ("./products.json")
 const routerProductos = require("./routes/productos")
 const upload = require("./storage")
@@ -15,20 +15,16 @@ const server = app.listen(PORT, (rep, res) => {
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-app.use("/", (req, res) => res.sendFile(__dirname + "/public/index.html"))
+app.get("/api/productonuevo", (req, res) => res.sendFile(__dirname + "/public/index.html"))
 
 app.get("/", (req, res) => {
-    res.send("<h1>Funciona????</h1>")
+    res.send("<h1>Funciona</h1>")
 })
 
 app.get("/api/productos", (req, res) => {
     container.getAll().then(
         productos => res.json(productos)
         )
-
-    //de este modo no me funciona, entiendo que es algo del contenedor. No me codifica si agrego (productos,null, 2)
-    /* const productos = container.getAll()
-    res.json(productos) */
 })
 
 app.get("/api/productos/:id", (req, res) => {
@@ -42,10 +38,6 @@ app.post("/api/productos", (req, res) => {
     res.json({mensaje: "ok post"})
 })
 
-app.get("/api/productos", upload.single("foto"), (req, res) => {
-    const file = req.file
-    res.json({mensaje: "ok post"})
-})
 
 app.put("/api/productos/:id", (req, res) => {
     const id = req.params.id
@@ -63,6 +55,11 @@ app.delete("/api/productos/:id", (req, res) => {
         id: req.params.id,
         nuevo: req.body
     })
+})
+
+app.post("/api/productonuevo", upload.single("foto"), (req, res) => {
+    const file = req.file
+    res.json({mensaje: "ok post"})
 })
 
 app.use("/api/productos2", routerProductos)
