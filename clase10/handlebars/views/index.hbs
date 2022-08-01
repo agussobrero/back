@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<title>Nuevo Producto</title>
+  <style>
+    h1 {
+      color: blue;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    input {
+      float: left;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    form {
+      width: 50%;
+      margin-left: 25%;
+    }
+
+    form .submit {
+      background-color: greenyellow;
+    }
+
+    label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Registro de Nuevo Producto</h1>
+  <form action="/productos" enctype="multipart/form-data" method="POST">
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre Producto">
+    <input type="text" name="precio" id="precio" placeholder="Precio Producto">
+    <label for="submit">Foto</label>
+    <input type="file" name="foto" />
+    <input type="submit" value="Subir Producto" class="submit" />
+  </form>
+</body>
+</html>

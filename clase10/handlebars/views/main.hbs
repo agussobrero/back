@@ -1,0 +1,13 @@
+<div>
+    <h1>Datos Personales</h1>
+    <ul>
+        <li>Nombre {{nombre}} </li>
+        <li>Apellido {{apellido}} </li>
+        <li>Edad {{edad}} </li>
+    </ul>
+    <h4>
+        {{#each comments}}
+            <li> {{this.text}} - {{this.user}} </li>
+        {{/each}}
+    </h4>
+</div>
