@@ -1,13 +1,14 @@
 <div>
-    <h1>Datos Personales</h1>
+    <h1>Datos Producto</h1>
+
     <ul>
-        <li>Nombre {{nombre}} </li>
-        <li>Apellido {{apellido}} </li>
-        <li>Edad {{edad}} </li>
-    </ul>
-    <h4>
-        {{#each comments}}
-            <li> {{this.text}} - {{this.user}} </li>
+        {{#each productos}}
+        
+            <li> Producto: - {{this.name}} </li>
+            <li> Precio: - {{this.price}} </li>
+            <li> ID: - {{this.id}} </li>
+            <br>
+            <hr>
         {{/each}}
-    </h4>
+    </ul>
 </div>
