@@ -1,0 +1,14 @@
+<div>
+    <h1>Datos Producto</h1>
+    <% if (productos.length > 0) { %>
+        <ul>
+            <% productos.forEach(function(producto) { %>
+                <li> Producto: - <%= producto.name %> </li>
+                <li> Precio: - <%= producto.price%> </li>
+                <li> ID: - <%= producto.id %> </li>
+                <br>
+                <hr>
+            <% }) %>
+        </ul>
+    <% } %>
+</div>

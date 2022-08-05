@@ -123,8 +123,70 @@
     "id": 35
   },
   {
-    "name": "thcGummies45",
-    "price": "6700",
+    "nombre": "thcGummiesXXX",
+    "precio": "5000",
     "id": 36
+  },
+  {
+    "nombre": "thcGummiesXXX",
+    "precio": "5000",
+    "id": 37
+  },
+  {
+    "nombre": "thcGummiesXXX",
+    "precio": "5000",
+    "id": 38
+  },
+  {
+    "nombre": "thcGummiesXXX",
+    "precio": "5000",
+    "id": 39
+  },
+  {
+    "id": 40
+  },
+  {
+    "nombre": "thcGummiesXXX",
+    "precio": "5000",
+    "id": 41
+  },
+  {
+    "nombre": "thcGummiesXXX",
+    "precio": "5000",
+    "id": 42
+  },
+  {
+    "nombre": "thcGummiesXXX",
+    "precio": "5000",
+    "id": 43
+  },
+  {
+    "nombre": "thcGummiesxxx",
+    "precio": "5000",
+    "id": 44
+  },
+  {
+    "nombre": "thcGummiesDLC",
+    "precio": "2900",
+    "id": 45
+  },
+  {
+    "id": 46
+  },
+  {
+    "id": 47
+  },
+  {
+    "id": 48
+  },
+  {
+    "nombre": "thcGummiesXXX",
+    "precio": "2900",
+    "id": 49
+  },
+  {
+    "name": "thcCream",
+    "price": "5500",
+    "id": 50
   }
 ]

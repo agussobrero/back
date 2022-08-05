@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
     res.render("index")
 })
 
-app.get("/productos", async(req, res) => {
+app.get("/allProd", async(req, res) => {
     let productos 
     try {
         productos = await container.getAll()
@@ -34,10 +34,8 @@ app.get("/productos", async(req, res) => {
     res.render("main", {productos})
 })
 
-app.post("/productos", async (req, res) => {
-    console.log(req.body)
+app.post("/createProd", async (req, res) => {
     const producto = req.body
-    console.log(req.body)
     console.log(producto)
     let prodNuevo
     try{
@@ -45,12 +43,11 @@ app.post("/productos", async (req, res) => {
     } catch (err) {
         console.log(err)
     }
-    res.redirect("/productos")
+    console.log(prodNuevo)
+    res.redirect("/allProd")
 })
 
-/* app.get("/productos", (req, res) => {
-    res.render("tabla", {productos})
-}) */
+
 
 const PORT = 8080;
 app.listen(PORT, () => {

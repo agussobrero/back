@@ -1,0 +1,13 @@
+html
+  head
+    title Nuevo Producto
+      
+    body
+      h1 Registro de Nuevo Producto
+
+      form(method="POST" action="/createProd")
+        input(type="text" id="name" name="name" placeholder ="Nombre Producto" )
+        input(type="text" id="price" name="price" placeholder ="Precio Producto")
+        input(type="submit" value= "Subir Producto") 
+      
+
