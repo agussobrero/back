@@ -3,12 +3,12 @@ const express = require("express")
 const {Server : HTTPServer} = require("http")
 const {Server : SocketServer} = require ("socket.io")
 const Contenedor = require ("./utils/container")
-const contProductos = new Contenedor("./productos.json")
+const productos = new Contenedor("./productos.json")
 const contMensajes = new Contenedor("./mensajes.json")
 const handlebars = require("handlebars")
 const events = require("./socketEvents")
 
-const productos = contProductos.getAll()
+/* const productos = [] */
 
 const app = express()
 
@@ -35,20 +35,28 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + ("/public/views/index.html"))
 })
 
+app.post("/", (req, res) => {
+    const body = req.body
+    productos.save({
+        name: body.name,
+        price: body.price
+    })
+})
+
 socketServer.on("connection", async (socket) => {
     console.log(`nuevo cliente conectado`)
-    socketServer.emit(events.UPDATE_PRODUCTS, await productos)
+    socketServer.emit(events.UPDATE_PRODUCTS, await productos.getAll())
 
-    socket.on(events.POST_PRODUCT, async (producto) => {
+    /* socket.on(events.POST_PRODUCT, async (producto) => {
         const prod = {...producto, socket_id: socket.id}
         await productos.save(prod)
         console.log(prod)
         socketServer.sockets.emit(events.NEW_PRODUCT, (prod))
-    })
+    }) */
 })
 
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8080
 httpServer.listen((PORT), () => {
     console.log(`Conectado al puerto: ${PORT}`)
 })

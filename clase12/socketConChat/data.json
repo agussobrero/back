@@ -1,0 +1,34 @@
+[
+  {
+    "nombre": "Agu",
+    "mensaje": "Probando ando",
+    "socket_id": "laGTPHhnQ8LrlVSkAAAB",
+    "likes": 1,
+    "date": 1660526955105,
+    "id": 1
+  },
+  {
+    "nombre": "Tom",
+    "mensaje": "Super",
+    "socket_id": "laGTPHhnQ8LrlVSkAAAB",
+    "likes": 1,
+    "date": 1660527162121,
+    "id": 2
+  },
+  {
+    "nombre": "Mama",
+    "mensaje": "felices",
+    "socket_id": "laGTPHhnQ8LrlVSkAAAB",
+    "likes": 2,
+    "date": 1660527229161,
+    "id": 3
+  },
+  {
+    "nombre": "Papa",
+    "mensaje": "seee",
+    "socket_id": "laGTPHhnQ8LrlVSkAAAB",
+    "likes": 1,
+    "date": 1660527729346,
+    "id": 4
+  }
+]

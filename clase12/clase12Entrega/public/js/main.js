@@ -4,7 +4,7 @@ socket.on("connect", ()=> {
     console.log("conectado al servidor")
 })
 
-socket.on("UPDATE_PRODUCTS" , (producto, productos) => {
+socket.on(events.UPDATE_PRODUCTS , (producto, productos) => {
     document.getElementById("productos").innerHTML = "";
         for (let producto of productos) {
             appendProducto(producto)
@@ -28,7 +28,7 @@ function enviarProducto() {
     const name = document.getElementById("name").value
     const price = document.getElementById("price").value
 
-    socket.emit(events.POST_UPDATE, {name, price})
+    socket.emit(events.POST_PRODUCT, {name, price})
 }
 
 
