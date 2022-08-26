@@ -1,0 +1,63 @@
+[
+  {
+    "token": "ncmv,nxcmkhsd",
+    "id": 1,
+    "timestamp": 6.4344432112,
+    "nombre": "ThcCream",
+    "descripcion": "Crema Thc",
+    "código": 100100,
+    "foto": "https://www.dillards.com/p/cbd-daily-cbd-intensive-cream/509719334",
+    "precio": 5500,
+    "stock": 22
+  },
+  {
+    "token": "rt0e9r8t0ere",
+    "timestamp": 6.4344432112,
+    "nombre": "ThcCreamBig",
+    "descripcion": "Crema Thc",
+    "código": 100100,
+    "foto": "https://www.dillards.com/p/cbd-daily-cbd-intensive-cream/509719334",
+    "precio": 5500
+  },
+  {
+    "token": "ierpowieporiwe",
+    "timestamp": 6.4344432112,
+    "nombre": "ThcCreamBig",
+    "descripcion": "Crema Thc",
+    "código": 100100,
+    "foto": "https://www.dillards.com/p/cbd-daily-cbd-intensive-cream/509719334",
+    "precio": 5500
+  },
+  {
+    "token": "2ñl34k2ñ3",
+    "timestamp": 6.4344432112,
+    "nombre": "ThcOil",
+    "descripcion": "Crema Thc",
+    "código": 100100,
+    "foto": "https://www.dillards.com/p/cbd-daily-cbd-intensive-cream/509719334",
+    "precio": 5500,
+    "stock": 22,
+    "id": 4
+  },
+  {
+    "token": "xc89v7wej",
+    "nombre": "ThcOilBig",
+    "descripcion": "Crema Thc Big",
+    "código": 100100,
+    "foto": "https://www.dillards.com/p/cbd-daily-cbd-intensive-cream/509719334",
+    "precio": 5500,
+    "stock": 22,
+    "id": 6
+  },
+  {
+    "token": "rnbwenmrbwemn",
+    "nombre": "ThcOilBig",
+    "descripcion": "Crema Thc Strong",
+    "código": 100100,
+    "foto": "https://www.dillards.com/p/cbd-daily-cbd-intensive-cream/509719334",
+    "precio": 5500,
+    "stock": 22,
+    "id": 7,
+    "timestamp": 1661267358307
+  }
+]

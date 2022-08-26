@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "timeStamp": 1661347792964,
+    "productos": [
+      {
+        "token": "3k12l3ñ1k2ñ",
+        "nombre": "ThcCream",
+        "descripcion": "Crema Thc Strong",
+        "código": 100100,
+        "foto": "https://www.dillards.com/p/cbd-daily-cbd-intensive-cream/509719334",
+        "precio": 5500,
+        "stock": 22,
+        "timestamp": 1661555327611,
+        "id": 2
+      },
+      {
+        "token": "3k12l3ñ1k2ñ",
+        "nombre": "CbdCream",
+        "descripcion": "Crema Cbd Strong",
+        "código": 200200,
+        "foto": "https://www.dillards.com/p/cbd-daily-cbd-intensive-cream/509719334",
+        "precio": 8900,
+        "stock": 12,
+        "timestamp": 1661555410652,
+        "id": 3
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "timestamp": 1661348780913,
+    "productos": [
+      {
+        "nombre": "carrito1"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "timestamp": 1661348871924,
+    "productos": [
+      {
+        "token": "lk4ñl32k432ñ",
+        "nombre": "ThcOil",
+        "descripcion": "Oil Thc Strong",
+        "código": 400400,
+        "foto": "https://www.dillards.com/p/cbd-daily-cbd-intensive-cream/509719334",
+        "precio": 8900,
+        "stock": 9,
+        "timestamp": 1661555566201,
+        "id": 2
+      }
+    ]
+  }
+]
