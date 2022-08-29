@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
     integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <title>Document</title>
+    <title>Registro Producto</title>
 </head>
 <title>Nuevo Producto</title>
   <style>
@@ -40,13 +40,25 @@
 
 <body>
   <h1>Registro de Nuevo Producto</h1>
-  <form action="/"  method="POST" id="ingresarProducto">
-    <input type="text" name="name" id="name" placeholder="Nombre Producto">
-    <input type="text" name="price" id="price" placeholder="Precio Producto">
-    <label for="submit">Producto</label>
-    <input type="submit" value="Subir Producto" class="submit" onclick="enviarProducto()"/>
-  </form>
+    <form action="/"  method="POST" id="ingresarProducto">
+        <input type="text" name="name" id="name" placeholder="Nombre Producto">
+        <input type="text" name="price" id="price" placeholder="Precio Producto">
+        <label for="submit">Producto</label>
+        <input type="submit" value="Subir Producto" class="submit"/>
+    </form>
   <div id="productos"></div>
+
+  <h1>Centro de Mensajes</h1>
+    <form action="/"  method="POST" id="ingresarMensaje">
+        <input type="text" name="email" id="email" placeholder="email Usuario">
+        <input type="text" name="mensaje" id="mensaje" placeholder="mensaje">
+        <input type="submit" class="submit"id="enviarMensaje">
+    </form>
+    <br>
+    <br>
+    <br>
+    <h1>Chat Mensajes</h1>
+    <div id="mensajes"></div>
 
   <script
       src="https://cdn.socket.io/4.5.0/socket.io.min.js"

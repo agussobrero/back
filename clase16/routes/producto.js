@@ -5,6 +5,7 @@ const productos = new Contenedor("./productos.json")
 
 router.get("/", (req, res) => {
     res.send(productos.getAll())
+    res.json("funciona?")
 })
 
 router.post("/", (req, res) => {

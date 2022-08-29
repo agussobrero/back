@@ -62,6 +62,19 @@ app.post("/api/productonuevo", upload.single("foto"), (req, res) => {
     res.json({mensaje: "ok post"})
 })
 
-app.use("/api/productos2", routerProductos)
+app.use("/productos", routerProductos)
+
+routerProductos.get("/all", (req, res) => {
+    container.getAll().then(
+        productos => res.json(productos)
+        )
+})
+
+routerProductos.get("/:id", (req, res) => {
+    const id = parseInt(req.params.id)
+    container.getById(id).then(
+        producto => res.json(producto)
+    )
+})
 
 server.on("error", error => console.log(`Error: ${error}`))
