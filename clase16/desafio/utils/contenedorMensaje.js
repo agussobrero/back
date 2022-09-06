@@ -75,10 +75,12 @@ class Container {
         return product
     }
 
-    updateById(id, object) {
-        const index = this.contenedor.findIndex(el => el.id === id);
-        this.contenedor[index] = object;
-        this._saveAll(this.contenedor);
+    updateById = async (id, mensajeNuevo) =>{
+        const mensajes = await this.getAll()
+        const mensaje = await mensajes.find(mensaje => mensaje.id == id)
+        const index = mensajes.indexOf(mensaje)
+        mensajes[index] = {...mensajeNuevo, id: id}
+        await fs.promises.writeFile(this.filename, JSON.stringify(mensajes, null, 2))
     }
 } 
 

@@ -1,8 +1,8 @@
 const express = require("express")
 const {Server: HTTPServer} = require("http")
 const {Server: SocketServer} = require("socket.io")
-const productoRoutes = require("./routes/producto")
-const mensajeRoutes = require("./routes/mensaje")
+const productoRoutes = require("./routes/productos")
+const mensajeRoutes = require("./routes/mensajes")
 const Contenedor = require ("./utils/contenedorProducto")
 const productos = new Contenedor("./productos.json")
 const mensajes = new Contenedor("./mensajes.json")
@@ -10,21 +10,19 @@ const { urlencoded } = require("express")
 
 const app = express()
 
-/* app.use(express.static("public")) */
+app.use(express.static("public"))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-app.use(("/api/producto", productoRoutes))
-app.use(("/api/mensaje", mensajeRoutes))
+app.use("/api/productos", productoRoutes)
+app.use("/api/mensajes", mensajeRoutes)
 
 const httpServer = new HTTPServer(app)
 const socketServer = new SocketServer(httpServer)
 
-
-
-/* app.get("/", (req, res) => {
+app.get("/", (req, res) => {
     res.sendFile(__dirname + ("/public/index.html"))
-}) */
+})
 
 socketServer.on("connection", async (socket) =>{
         console.log("nuevo cliente conectado")

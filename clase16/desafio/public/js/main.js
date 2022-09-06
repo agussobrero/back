@@ -57,7 +57,6 @@ socket.on("mensajesRegistrados", (mensaje) => {
 })
 
 function mensajesListHtml (mensajes) {
-    console.log(mensajes)
     return mensajes.map((mensaje) => {
         return (
             `
