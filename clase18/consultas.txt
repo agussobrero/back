@@ -1,0 +1,28 @@
+Mango Shell - Crud y filtros
+
+ecommerce> db.productos.insertMany([{name: "thc bomb", price: 150},{name: "cbd bomb", price: 1200},{name: "thc wax", price: 4300}])
+
+ecommerce> db.mensajes.insertMany([{email:"primero@mail.com", message:"tremendo post"},{email:"segundo@@mail.com", message:"muy malo el post"},{email:"tercero@mail.com", message:"borren este blog"}])
+
+ecommerce> db.mensajes.insertOne([{email:"anarco@mail.com", message:"anarquistas!!!"}])
+
+ecommerce> db.mensajes.count()
+
+ecommerce> db.productos.insertMany([{name: "thc dab", price: 550},{name: "cbd dab", price: 1200},{name: "cbd wax", price: 3500}])
+
+ecommerce> db.productos.find({price: {$in: [1200, 3500]}})
+
+ecommerce> db.productos.find({"price": {$lt: 1000}})
+
+ecommerce> db.productos.find({"price": {$gt: 3000}})
+
+ecommerce> db.productos.find({},{price: 1}).sort({price: 1}).skip(2).limit(1)
+
+ecommerce> db.productos.updateMany({},{$set: {"stock": 100}})
+
+ecommerce> db.productos.updateMany({"price": {$gt: 4000}},{$set: {"stock": 0}})
+
+ecommerce> db.productos.deleteMany({price: {$lt: 1000}})
+
+ecommerce> db.createUser({user: "pepe", pwd: "asd123", roles: [{role: "read", db: "ecommerce"}]})
+
