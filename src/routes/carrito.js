@@ -1,12 +1,11 @@
 const { Router } = require("express")
 const router = Router()
-const Contenedor = require("../utils/contenedorCarrito")
-const carrito = new Contenedor("./carrito.json")
+const Contenedor = require("../controllers/files/carritoFileController")
+const carrito = new Contenedor("../controllers/files/carrito.json")
 const authie = require("../utils/authie")
 
 router.post("/", authie, (req, res) => {
     carrito.createCarrito()
-    /* console.log(`Carrito creado con el id ${carrito.id}`) */
     res.json(`Post llevado a a cabo`)
 })
 

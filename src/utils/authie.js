@@ -1,10 +1,10 @@
+let admin = true
+
 function authie (req, res, next) {
-    const token = req.body.token
-    if(!token) {
+    if(!admin) {
         res.send("Acceso denegado")
         return 
     } else {
-        req.token = token
         next()
     }
 }

@@ -1,6 +1,6 @@
 const express = require("express")
-const routerProducto = require("./routes/productos")
-const routerCarrito = require("./routes/carrito")
+const routerProducto = require("./src/routes/productos")
+const routerCarrito = require("./src/routes/carrito")
 const { urlencoded } = require("express")
 
 const app = express()

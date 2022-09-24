@@ -1,11 +1,13 @@
 const { Router } = require ("express")
 const router = Router()
-const Contenedor = require("../utils/contenedorProducto")
-const productos = new Contenedor("./producto.json")
+const {productosDao} = require("../daos/index")
 const authie = require ("../utils/authie")
 
+/* const productos = productosDao */
+
 router.get("/", async (req, res) => {
-    listaProductos = await productos.getAll()
+    listaProductos = await productosDao.getAll()
+    console.log(listaProductos)
     res.json(listaProductos)
 })
 
