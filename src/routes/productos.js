@@ -3,11 +3,10 @@ const router = Router()
 const {productosDao} = require("../daos/index")
 const authie = require ("../utils/authie")
 
-/* const productos = productosDao */
+const productos = productosDao
 
 router.get("/", async (req, res) => {
-    listaProductos = await productosDao.getAll()
-    console.log(listaProductos)
+    listaProductos = await productos.getAll()
     res.json(listaProductos)
 })
 

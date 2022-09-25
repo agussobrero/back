@@ -1,32 +1,12 @@
 const mongoose = require ("mongoose")
-const config = require ("../../config/config.js")
-
-const { mongoDb } = config
-
-connection = async () => {
-    try {
-        await mongoose.connect(mongoDb.url)
-        console.log("Conectado a Producto MongoDb")
-    } catch (err) {
-        console.log(err)
-    }
-}
+const {model, Types} = require ("mongoose")
+const connection = require("../index")
 
 connection()
-console.log(mongoDb.url)
-
-const productoSchema = new mongoose.Schema({
-    timestamp: {type: String, required: true, max: 30},
-    nombre: {type: String, required: true, max: 50},
-    descripcion: {type: String, required: true, max: 100},
-    código: {type: String, required: true},
-    precio: {type: Number, required: true},
-    stock: {type: Number, required: true}
-})
 
 class ProductoMongoController {
     constructor(collection, schema) {
-        this.collection = mongoose.model("productos", productoSchema)
+        this.collection = model(collection, schema)
     }
 
     save = async (producto) => {
@@ -42,7 +22,9 @@ class ProductoMongoController {
 
     getById = async (id) => {
         try{
-            await this.collection.findById({id})
+            id = Types.ObjectId(id)
+            const result = await this.collection.findOne({_id: id})
+            return result
         } catch (err) {
             console.log(err)
         }
@@ -50,7 +32,9 @@ class ProductoMongoController {
 
     getAll = async () => {
         try{
-            await this.collection.find()
+            const result = await this.collection.find()
+            console.log(result)
+            return result
         } catch (err) {
             console.log(err)
         }

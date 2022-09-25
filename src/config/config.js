@@ -16,8 +16,8 @@ const config = {
         }
     },
     fileSystem: {
-        dirProductos: "../controllers/files/productos.json",
-        dirCarritos: "../controllers/files/carritos.json"
+        dirProductos: "./src/controllers/files/productos.json",
+        dirCarritos: "./src/controllers/files/carritos.json"
     },
     firebase: {
 

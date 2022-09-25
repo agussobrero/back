@@ -1,4 +1,4 @@
-const CarritoMongoController = require("../../controllers/mongo/productoMongoController")
+const CarritoMongoController = require("../../controllers/mongo/carritos/carritoMongoController")
 const config = require("../../config/config")
 const mongoose = require("mongoose")
 const { Schema } = mongoose

@@ -59,5 +59,16 @@
     "stock": 22,
     "id": 7,
     "timestamp": 1661267358307
+  },
+  {
+    "token": "uyiuoy8",
+    "nombre": "Thc New Bomb",
+    "descripcion": "Thc Strong Application",
+    "código": 100200,
+    "foto": "https://www.dillards.com/p/cbd-daily-cbd-intensive-cream/509719334",
+    "precio": 8230,
+    "stock": 12,
+    "id": 8,
+    "timestamp": 1664049052692
   }
 ]
