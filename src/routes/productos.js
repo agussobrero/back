@@ -26,11 +26,13 @@ router.put("/:id", authie, (req, res) => {
     body = req.body
     id = req.params.id
     productos.updateById(id, body)
+    res.json({succes: true})
 })
 
 router.delete("/:id", authie, (req, res) => {
     id = req.params.id
     productos.deleteById(id)
+    res.json({succes: true})
 })
 
 module.exports = router

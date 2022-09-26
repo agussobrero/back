@@ -1,33 +1,18 @@
 const mongoose = require ("mongoose")
-const config = require ("../../../config/config.js")
-
-const { mongoDb } = config
-
-connection = async () => {
-    try {
-        await mongoose.connect(mongoDb.url)
-        console.log("Conectado a Carrito MongoDb")
-    } catch (err) {
-        console.log(err)
-    }
-}
+const {model, Types} = require ("mongoose")
+const connection = require("../index")
 
 connection()
 
-const carritoSchema = new mongoose.Schema({
-    id: {type: Number, required: true},
-    timestamp: {type: Number},
-    productos: {type: Array}
-})
-
 class CarritoMongoController {
     constructor(collection, schema) {
-        this.collection = mongoose.model("carritos", carritoSchema)
+        this.collection = model(collection, schema)
     }
 
     getAll = async () => {
         try{
-            await this.collection.find()
+            const result = await this.collection.find()
+            return result
         } catch (err) {
             console.log(err)
         }
@@ -42,10 +27,10 @@ class CarritoMongoController {
                 const result = await carritoNew.save()
                 return result
             } else {
-                idNuevo = carritos.reduce((max, obj) => { return obj.id > max ? obj.id : max }, 0) + 1
+                let idNuevo = carritos.reduce((max, obj) => { return obj.id > max ? obj.id : max }, 0) + 1
                 const carrito = {id: idNuevo, timestamp: Date.now(), productos: []}
                 const carritoNew = new this.collection(carrito)
-                result = await carritoNew.save()
+                let result = await carritoNew.save()
                 return result
             }
         } catch (err) {
@@ -55,10 +40,17 @@ class CarritoMongoController {
 
     getById = async (id) => {
         try{
-            let carrito =""
-            const carritos = await this.getAll()
-            carrito = await this.collection.findById({id})
-            return carrito
+            /* const _id = Types.ObjectId(id)
+            const _carrito = await this.collection.findOne({_id: _id}) */
+
+            id = Types.ObjectId(id)
+            const carrito = await this.collection.findOne({_id: id})
+            const productos = carrito.productos
+            if (productos) {
+                return productos;
+            } else {
+                throw new Error('No existe el carrito');
+            }
         } catch (err) {
             console.log(err)
         }
@@ -66,7 +58,9 @@ class CarritoMongoController {
 
     deleteById = async (id) => {
         try{
-            await this.collection.deleteById({id})
+            const _id = Types.ObjectId(id)
+            const _result = await this.collection.deleteOne({_id: _id})
+            return _result
         } catch (err) {
             console.log(err)
         }
@@ -76,7 +70,7 @@ class CarritoMongoController {
         try{
             let carrito =""
             const carritos = await this.getAll()
-            carrito = await carritos.filter(obj => obj.id == +id)
+            carrito = carritos.filter(obj => obj.id == +id)
             producto.timeStamp = Date.now()
             if (carrito[0].productos.length === 0) {
                 producto.id = 1

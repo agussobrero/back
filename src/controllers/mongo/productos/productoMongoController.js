@@ -33,7 +33,6 @@ class ProductoMongoController {
     getAll = async () => {
         try{
             const result = await this.collection.find()
-            console.log(result)
             return result
         } catch (err) {
             console.log(err)
@@ -42,7 +41,9 @@ class ProductoMongoController {
 
     updateById = async (id, productoNuevo) => {
         try {
-            await this.collection.findByIdAndUpdate({id}, productoNuevo)
+            id = Types.ObjectId(id)
+            const result = await this.collection.findByIdAndUpdate({_id: id}, productoNuevo)
+            return result
         } catch (err) {
             console.log(err)
         } 
@@ -50,7 +51,9 @@ class ProductoMongoController {
 
     deleteById = async (id) => {
         try{
-            await this.collection.deleteOne({id})
+            id = Types.ObjectId(id)
+            const result = await this.collection.deleteOne({_id: id})
+            return result
         } catch (err) {
             console.log(err)
         }

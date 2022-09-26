@@ -1,8 +1,9 @@
-const { Router } = require("express")
+const { Router } = require ("express")
 const router = Router()
-const Contenedor = require("../controllers/files/carritoFileController")
-const carrito = new Contenedor("../controllers/files/carrito.json")
-const authie = require("../utils/authie")
+const {carritosDao} = require("../daos/index")
+const authie = require ("../utils/authie")
+
+const carrito = carritosDao
 
 router.post("/", authie, (req, res) => {
     carrito.createCarrito()
@@ -18,7 +19,7 @@ router.delete("/:id", authie, (req, res) => {
 router.get("/:id/productos", authie, async (req, res) => {
     const id = req.params.id
     const carritoProducto = await carrito.getById(id)
-    res.json(carritoProducto.productos)
+    res.json(carritoProducto)
 })
 
 router.post("/:id/productos", authie, async (req, res) => {
