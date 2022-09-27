@@ -32,7 +32,7 @@ router.post("/:id/productos", authie, async (req, res) => {
 router.delete("/:id/productos/:id_prod", authie, (req, res) => {
     const id = req.params.id
     const id_prod = req.params.id_prod
-    carrito.deleteProdudct(id, id_prod)
+    carrito.deleteProduct(id, id_prod)
     res.json(`Producto eliminado del carrito`)
 })
 

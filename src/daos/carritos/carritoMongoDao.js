@@ -5,7 +5,7 @@ const { Schema } = mongoose
 
 const carritoSchema = new mongoose.Schema({
     id: {type: Number, required: true},
-    timestamp: {type: Number},
+    timestamp: {type: String, required: true, max: 30},
     productos: {type: Array}
 })
 

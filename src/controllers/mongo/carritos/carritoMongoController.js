@@ -40,17 +40,10 @@ class CarritoMongoController {
 
     getById = async (id) => {
         try{
-            /* const _id = Types.ObjectId(id)
-            const _carrito = await this.collection.findOne({_id: _id}) */
-
-            id = Types.ObjectId(id)
-            const carrito = await this.collection.findOne({_id: id})
+            const _id = Types.ObjectId(id)
+            const carrito = await this.collection.findOne({_id: _id})
             const productos = carrito.productos
-            if (productos) {
-                return productos;
-            } else {
-                throw new Error('No existe el carrito');
-            }
+            return productos
         } catch (err) {
             console.log(err)
         }
@@ -68,34 +61,36 @@ class CarritoMongoController {
 
     addProduct = async (id, producto) => {
         try{
+            const _id = Types.ObjectId(id)
             let carrito =""
             const carritos = await this.getAll()
-            carrito = carritos.filter(obj => obj.id == +id)
+            carrito = carritos.filter(obj => _id == _id)
             producto.timeStamp = Date.now()
-            if (carrito[0].productos.length === 0) {
-                producto.id = 1
-            }
-            else {
-                producto.id = await carrito[0].productos.reduce((max, obj) => { return obj.id > max ? obj.id : max }, 0) + 1
-            }
-            carrito[0].productos.push(producto)
+            carritos[0].productos.push(producto)
+            
             await this.collection.updateOne(
-                {id: id}, 
-                {$set: {productos: carrito[0].productos}})
+                {_id: _id}, 
+                {$set: {productos: carritos[0].productos}})
         } catch (err) {
             console.log(err)
         }
     }
+
     deleteProduct = async (id, productoId) => {
         try{
             let carrito =""
             let producto =""
+            const _id = Types.ObjectId(id)
+            const _prodId = Types.ObjectId(productoId)
             const carritos = await this.getAll()
-            carrito = await carritos.find(carrito => carrito.id === +id)
-            producto = await carrito.productos.find(producto => producto.id === +productoId)
-            const index = carrito.productos.indexOf(producto)
-            carrito.productos.splice(index, 1)
-            await this.collection.deleteOne(id)
+            carrito = await carritos.findOne({_id : _id})
+            console.log(carrito)
+            producto = await carrito.productos.findOne(producto.id == _prodId)
+            const index = carritos.productos.indexOf(producto)
+            const _result = carritos.productos.splice(index, 1)
+            await this.collection.updateOne(
+                {_id: _id}, 
+                {$set: {productos: _result}})
         } catch (err) {
             console.log(err)
         } 
