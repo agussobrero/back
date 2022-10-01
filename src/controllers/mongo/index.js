@@ -6,7 +6,7 @@ const { mongoDb } = config
 connection = async () => {
     try {
         await mongoose.connect(mongoDb.url)
-        console.log("Conectado a MongoDb/Producto")
+        console.log("Conectado a MongoDb")
     } catch (err) {
         console.log(err)
     }
