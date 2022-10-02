@@ -78,24 +78,6 @@ class CarritoMongoController {
             await this.collection.updateOne(
                 {_id: id}, 
                 {$set: {productos: carritoProd}})
-
-            
-            
-/*             const _id = Types.ObjectId(id)
-            const _prodId = Types.ObjectId(id_prod)
-            const carritosJ = await this.getAll()
-            const carritos = JSON.stringify(carritosJ,null, 2)
-            console.log(carritos)
-
-            const carritoIndex = carritos.findIndex((obj)=> obj._id == _id)
-            const productosCarrito = carritos[carritoIndex].productos
-            const prodDeleteIndex = productosCarrito.findIndex((obj)=> obj._id == _prodId)
-            productosCarrito.splice(prodDeleteIndex, 1)
-
-            await this.collection.updateOne(
-                {_id: id}, 
-                {$set: {productos: productosCarrito}}) */
-
         } catch (err) {
             console.log(err)
         } 
@@ -103,13 +85,3 @@ class CarritoMongoController {
 }
 
 module.exports = CarritoMongoController
-
-            /* const carritos = await this.getAll()
-            carrito = carritos.find((obj=> obj._id == _id))
-            console.log(carrito)
-            producto = await carrito.productos.find(producto.id == _prodId)
-            const index = carrito.productos.indexOf(producto)
-            const _result = carrito.productos.splice(index, 1)
-            await this.collection.updateOne(
-                {_id: _id}, 
-                {$set: {productos: _result}}) */
