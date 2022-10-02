@@ -61,16 +61,9 @@ class CarritoMongoController {
 
     addProduct = async (id, producto) => {
         try{
-            const _id = Types.ObjectId(id)
-            let carrito =""
-            const carritos = await this.getAll()
-            carrito = carritos.filter(obj => obj._id === _id)
-            producto.timeStamp = Date.now()
-            carritos[0].productos.push(producto)
-            
-            await this.collection.updateOne(
-                {_id: _id}, 
-                {$set: {productos: carritos[0].productos}})
+            const carrito = await this.collection.findOne({_id: id})
+            carrito.productos.push(producto)
+            carrito.save()
         } catch (err) {
             console.log(err)
         }
@@ -78,7 +71,17 @@ class CarritoMongoController {
 
     deleteProduct = async (id, id_prod) => {
         try{
-            const _id = Types.ObjectId(id)
+            const carrito = await this.collection.findOne({_id: id})
+            const carritoProd = carrito.productos
+            const prodDeleteIndex = carritoProd.findIndex((obj)=> obj._id == id_prod)
+            carritoProd.splice(prodDeleteIndex, 1)
+            await this.collection.updateOne(
+                {_id: id}, 
+                {$set: {productos: carritoProd}})
+
+            
+            
+/*             const _id = Types.ObjectId(id)
             const _prodId = Types.ObjectId(id_prod)
             const carritosJ = await this.getAll()
             const carritos = JSON.stringify(carritosJ,null, 2)
@@ -91,7 +94,7 @@ class CarritoMongoController {
 
             await this.collection.updateOne(
                 {_id: id}, 
-                {$set: {productos: productosCarrito}})
+                {$set: {productos: productosCarrito}}) */
 
         } catch (err) {
             console.log(err)

@@ -50,7 +50,7 @@ class CarritoFirebaseController {
         try{
             let carrito= this.query.doc(`${id}`)
             const carritoInfo = await carrito.get()
-            const productosCarrito = carritoInfo.data()
+            const productosCarrito = carritoInfo.data().productos
             productosCarrito.push(producto)
             await carrito.update({productos: productosCarrito})
         } catch (err) {
@@ -61,11 +61,12 @@ class CarritoFirebaseController {
     deleteProduct = async (id, prodId) => {
         try{
             let producto =""
-            const carritos = await this.getAll()
-            let carrito = this.query.doc(`${id}`)
-            producto = await carrito.productos.findOne(producto.id === prodId)
-            const index = carrito.productos.indexOf(producto)
-            const carritoProd = carrito.productos.splice(index, 1)
+            let carrito= this.query.doc(`${id}`)
+            const carritoInfo = await carrito.get()
+            const productosCarrito = carritoInfo.data().productos
+            const productoIndex = productosCarrito.find((obj)=> obj.id == prodId)
+            const index = productosCarrito.indexOf(productoIndex)
+            const carritoProd = productosCarrito.splice(index, 1)
             const _result = await carrito.update({
                 productos: carritoProd
             })
