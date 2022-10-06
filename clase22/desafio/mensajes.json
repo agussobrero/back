@@ -1,0 +1,32 @@
+[
+  {
+    "email": "agussobrero@hotmail.com",
+    "mensaje": "si que funciona verdad????",
+    "id": 1
+  },
+  {
+    "email": "super@rotmail.com",
+    "mensaje": "anduvo",
+    "id": 2
+  },
+  {
+    "email": "agussobrero@hotmail.com",
+    "mensaje": "y ahor???",
+    "id": 4
+  },
+  {
+    "email": "transitcard@hotmail.com",
+    "mensaje": "veremos pues...",
+    "id": 5
+  },
+  {
+    "email": "agussobrero@hotmail.com",
+    "mensaje": "y kenx?",
+    "id": 6
+  },
+  {
+    "email": "tatri@rotmail.com",
+    "mensaje": "lo hicimos andar",
+    "id": 7
+  }
+]knex
