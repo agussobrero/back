@@ -1,3 +1,4 @@
+const {normalize, schema, denormalize}= require("normalizr")
 
 class MensajeMongoContainer {
     constructor(Schema) {
@@ -6,8 +7,16 @@ class MensajeMongoContainer {
 
     getAll = async () => {
         try {
-            return await this.Schema.find()
-        } catch (error) {
+            const data = await this.Schema.find()
+            const _data = data.map(msg => {
+                return {...msg._doc, _id: msg._id.toString()}
+            })
+            const author = new schema.Entity('author', {}, {idAttribute: 'email'})
+            const comments = new schema.Entity('comment', {author}, {idAttribute: '_id'})
+
+            const _result = normalize(_data, [comments])
+            return _result
+        } catch (err) {
             console.log(err)
         }
     }

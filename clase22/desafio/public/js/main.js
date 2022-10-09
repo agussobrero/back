@@ -4,6 +4,8 @@ socket.on("connect", ()=> {
     console.log("Conectado al servidor")
 })
 
+/* const dataMensajes = require("./dataBases/posts.json") */
+
 //Productos
 /* const ingresoProducto = document.getElementById("ingresarProducto")
 
@@ -27,16 +29,16 @@ ingresoProducto.addEventListener("submit", (e) => {
 socket.on("testProductos", (testProductos) =>{
     prodTable(testProductos).then((html) => {
         document.getElementById("productosTest").innerHTML = html
-    }).then(socket.on("productoNuevo", testProductos))
+    })
+
+    socket.on("productosRegistrados", testProductos)
 })
 
-/* socket.on("productoNuevo", await productos.save(testProductos)) */
-
-const prodTable = async (testProductos) => {
+const prodTable = async (_testProductos) => {
     const res = await fetch ("../productos.hbs")
     const view = await res.text()
     const template = Handlebars.compile(view)
-    const html = template ({producto: testProductos})
+    const html = template ({producto: _testProductos})
     return html
 }
 
@@ -48,10 +50,25 @@ const enviarMensaje = document.getElementById("enviarMensaje")
 
 const ingresoMensaje = document.getElementById("ingresarMensaje")
 
-ingresoMensaje.addEventListener("submit", (e) => {
+socket.on("mensajesDeNormalizados", async (mensajesDeNorm) => {
+    const html = await mensaTable(mensajesDeNorm)
+    document.getElementById("mensajes").innerHTML = html
+})
+
+const mensaTable = async (_mensajesDeNorm) => {
+    console.log(_mensajesDeNorm)
+    const res = await fetch ("../mensajes.hbs")
+    const view = await res.text()
+    const template = Handlebars.compile(view)
+    const html = template ({mensaje: _mensajesDeNorm})
+    return html
+}
+
+
+ingresoMensaje.addEventListener("enviarMensaje", (e) => {
     e.preventDefault();
     const mensaje = {
-        autor: {
+        author: {
             email: ingresoMensaje.children.email.value,
             nombre: ingresoMensaje.children.nombre.value,
             apellido: ingresoMensaje.children.apellido.value,
@@ -59,16 +76,18 @@ ingresoMensaje.addEventListener("submit", (e) => {
             alias: ingresoMensaje.children.alias.value,
             avatar: ingresoMensaje.children.avatar.value
         },
-        mensaje: ingresoMensaje.children.mensaje.value
+        comment: ingresoMensaje.children.mensaje.value
     }
-    socket.emit("mensajeNuevo", mensaje)
+    socket.emit("mensajePost", mensaje)
     console.log(mensaje)
     ingresoMensaje.reset()
 })
 
-socket.on("mensajesRegistrados", (mensaje) => {
+
+
+socket.on("mensajeRegistrado", (mensaje) => {
     const html = mensajesListHtml(mensaje)
-    document.getElementById("mensajes").innerHTML = html
+    document.getElementById("mensajesChat").innerHTML = html
 })
 
 function mensajesListHtml (mensajes) {
@@ -76,8 +95,9 @@ function mensajesListHtml (mensajes) {
         return (
             `
             <div>
-                <b>Usuario: ${mensaje.email}</b>
-                <i>Mensaje: ${mensaje.mensaje}</i>
+                <b>Usuario: ${mensaje.author}</b>
+                <b>Mensaje: ${mensaje.comment}</b>
+                
             </div>
             `
         )

@@ -2,6 +2,9 @@ const express = require("express")
 const {Server: HTTPServer} = require("http")
 const {Server: SocketServer} = require("socket.io")
 const connection = require("./dataBases/mongoDb/index")
+const generadorMensajes = require("./utils/generadorMensaje")
+const dataMensajes = require("./dataBases/posts.json")
+const {normalize, schema, denormalize}= require("normalizr")
 /* const productoRoutes = require("./routes/productos")
 const mensajeRoutes = require("./routes/mensajes") */
 
@@ -38,34 +41,39 @@ app.get("/test-productos", (req, res)=> {
 })
 
 const testProductos = generadorProductos(5)
+const testMensajes = generadorMensajes
 
 socketServer.on("connection", async (socket) =>{
         console.log("nuevo cliente conectado")
         
+
         socket.emit("testProductos", testProductos)
 
-        socket.emit("productoNuevo", await productos.save(testProductos.map((producto)=> {
-            console.log(producto)
-            return{
+        /* socket.emit("productoNuevo", 
+        testProductos.forEach(async (producto)=>{
+            await productos.save({
                 nombre: producto.nombre,
                 precio: producto.precio,
                 foto: producto.foto
-            }
-        }))
-        )
-        /* socket.on("productosRegistrados", await productos.getAll()) */
+            })
+        })) */
         
-        /* socket.emit("productosRegistrados", productos.getAll()) */
+        socket.emit("productosRegistrados", await productos.getAll())
 
 
 //Mensajes
+        const mensajesNorm = await mensajes.getAll() 
 
-    socket.emit("mensajesRegistrados", await mensajes.getAll())
+        const author = new schema.Entity('author', {}, {idAttribute: 'email'})
+        const comments = new schema.Entity('comment', {author}, {idAttribute: '_id'})
+        const mensajesDeNorm = denormalize(mensajesNorm.result, [comments], mensajesNorm.entities)
 
-    socket.on("mensajeNuevo", async (mensaje) => {
+        socket.emit("mensajesDeNormalizados", mensajesDeNorm)
+
+        socket.on("mensajePost", async (mensaje) => {
         await mensajes.save(mensaje)
 
-        socket.emit("mensajesRegistrados", mensajes.getAll())
+        socket.emit("mensajeRegistrado", mensaje)
     })
 })
 
