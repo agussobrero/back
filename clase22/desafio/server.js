@@ -62,13 +62,13 @@ socketServer.on("connection", async (socket) =>{
 
 
 //Mensajes
-        const mensajesNorm = await mensajes.getAll() 
-
-        const author = new schema.Entity('author', {}, {idAttribute: 'email'})
+        const mensajesData = await mensajes.getAll() 
+        const mensajesNorm = JSON.stringify(mensajesData,null, 2)
+        /* const author = new schema.Entity('author', {}, {idAttribute: 'email'})
         const comments = new schema.Entity('comment', {author}, {idAttribute: '_id'})
-        const mensajesDeNorm = denormalize(mensajesNorm.result, [comments], mensajesNorm.entities)
+        const mensajesDeNorm = denormalize(mensajesNorm.result, [comments], mensajesNorm.entities) */
 
-        socket.emit("mensajesDeNormalizados", mensajesDeNorm)
+        socket.emit("mensajesNormalizados", mensajesNorm)
 
         socket.on("mensajePost", async (mensaje) => {
         await mensajes.save(mensaje)

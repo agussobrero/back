@@ -50,17 +50,16 @@ const enviarMensaje = document.getElementById("enviarMensaje")
 
 const ingresoMensaje = document.getElementById("ingresarMensaje")
 
-socket.on("mensajesDeNormalizados", async (mensajesDeNorm) => {
-    const html = await mensaTable(mensajesDeNorm)
+socket.on("mensajesNormalizados", async (mensajesNorm) => {
+    const html = await mensaTable(mensajesNorm)
     document.getElementById("mensajes").innerHTML = html
 })
 
-const mensaTable = async (_mensajesDeNorm) => {
-    console.log(_mensajesDeNorm)
+const mensaTable = async (_mensajes) => {
     const res = await fetch ("../mensajes.hbs")
     const view = await res.text()
     const template = Handlebars.compile(view)
-    const html = template ({mensaje: _mensajesDeNorm})
+    const html = template ({mensaje: _mensajes})
     return html
 }
 
@@ -82,8 +81,6 @@ ingresoMensaje.addEventListener("enviarMensaje", (e) => {
     console.log(mensaje)
     ingresoMensaje.reset()
 })
-
-
 
 socket.on("mensajeRegistrado", (mensaje) => {
     const html = mensajesListHtml(mensaje)

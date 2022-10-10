@@ -1,7 +1,7 @@
 /* const { faker } = require("@faker-js/faker");
 const fs = require("fs");
 
-function generadorMensajes(n=100) {
+function generadorMensajes(n) {
     return Array(n).fill(null).map((_, i) => ({
         author: {
             email: faker.internet.email(),
@@ -24,4 +24,4 @@ const dataMensajes = generadorMensajes()
         console.log(err)
     }
 
-module.exports = dataMensajes */
+module.exports = generadorMensajes */
