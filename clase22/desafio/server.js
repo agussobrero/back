@@ -49,14 +49,14 @@ socketServer.on("connection", async (socket) =>{
 
         socket.emit("testProductos", testProductos)
 
-        /* socket.emit("productoNuevo", 
+        socket.emit("productoNuevo", 
         testProductos.forEach(async (producto)=>{
             await productos.save({
                 nombre: producto.nombre,
                 precio: producto.precio,
                 foto: producto.foto
             })
-        })) */
+        }))
         
         socket.emit("productosRegistrados", await productos.getAll())
 
