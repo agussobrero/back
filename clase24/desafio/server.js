@@ -117,13 +117,6 @@ app.post("/login", (req, res)=>{
     res.redirect("/")
 })
 
-/* app.use((req, res, next)=> {
-    if (req.session.name) {
-        req.session.ultimaConexion = Date.now()
-        next()
-    }
-}) */
-
 app.get("/", (req, res)=>{ 
     if (req.session.user) {
         if (req.session.visitas) {
@@ -158,7 +151,7 @@ app.post("/logout", (req, res)=> {
 })
 
 app.get("/logout", (req, res)=> {
-    res.sendFile(__dirname + "/public/logs/logout.html")
+    res.sendFile(__dirname + "/public/logs/logout.html", {user: req.session.user})
 })
 
 

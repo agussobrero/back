@@ -39,8 +39,8 @@
 </head>
 
 <body>
+  <h3 id="saludoUser"></h3>
   <br>
-  <h3> Bienvenido {{user}}, visita: {{visitas}} </h3>
   <h1>Registro de Nuevo Producto</h1>
     <form action="/"  method="POST" id="ingresarProducto">
         <input type="text" name="nombre" id="nombre" placeholder="Nombre Producto">
@@ -51,7 +51,7 @@
     </form>
   <div id="productos"></div>
 
-  {{!-- <h1>Centro de Mensajes</h1> --}}
+  <h1>Centro de Mensajes</h1>
     <form action="/"  method="POST" id="ingresarMensaje">
         <input type="text" name="email" id="email" placeholder="ingresar email ">
         <input type="text" name="nombre" id="nombre" placeholder="ingresar nombre ">
@@ -65,23 +65,16 @@
     <br>
     <br>
     <br>
-    {{!-- <h1>Chat Mensajes</h1> --}}
+    <h1>Chat Mensajes</h1>
     <div id="mensajes"></div>
 
-    {{!-- <a type="submit" href="/logout">Logout Session</a> --}}
-    {{!-- <input type="button" id="logout-btn" value="Logout"> --}}
+    <a type="submit" href="/logout">Logout Session</a>
 
   <script
       src="https://cdn.socket.io/4.5.0/socket.io.min.js"
       integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
       crossorigin="anonymous"
     ></script>
-    <script>
-        let logout = document.getElementById("logout-btn")
-        logout.addEventListener("click", ()=>{
-          res.redirect( "/public/logs/logout.html", {user: req.session.user})
-        })
-    </script>
-  <script src="../server.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 </html>
