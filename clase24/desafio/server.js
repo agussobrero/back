@@ -147,13 +147,13 @@ app.use((req, res, next)=> {
 
 app.post("/logout", (req, res)=> {
     req.session.destroy()
-    res.redirect("/login")
+    res.redirect("/logout")
 })
 
 app.get("/logout", (req, res)=> {
-    res.sendFile(__dirname + "/public/logs/logout.html", {user: req.session.user})
+    /* res.render("logout.hbs", {user: req.session.user}) */
+    res.sendFile(__dirname + "/public/logs/logout.html")
 })
-
 
 const PORT = process.env.PORT || 3000
 httpServer.listen((PORT), () => {

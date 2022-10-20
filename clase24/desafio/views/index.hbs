@@ -67,19 +67,23 @@
     <br>
     {{!-- <h1>Chat Mensajes</h1> --}}
     <div id="mensajes"></div>
+    <input type="submit" value="Logout Session" id="logout-btn"/> 
 
-    {{!-- <a type="submit" href="/logout">Logout Session</a> --}}
-    {{!-- <input type="button" id="logout-btn" value="Logout"> --}}
-
-  <script
+    <script
       src="https://cdn.socket.io/4.5.0/socket.io.min.js"
       integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
       crossorigin="anonymous"
     ></script>
+    {{!-- <script>
+        let logout = document.getElementById("logout-btn")
+        logout.addEventListener("click", ()=>{
+          res.redirect( "/logout", {user: req.session.user})
+        })
+    </script> --}}
     <script>
         let logout = document.getElementById("logout-btn")
         logout.addEventListener("click", ()=>{
-          res.redirect( "/public/logs/logout.html", {user: req.session.user})
+          window.location = "/logout"
         })
     </script>
   <script src="../server.js"></script>
