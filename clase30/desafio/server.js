@@ -84,10 +84,10 @@ passport.deserializeUser(async (id, done)=>{
     done(null, user)
 })
 
-const userPass = []
+/* const userPass = []
 userPass.push({
     user: {username: "agu@gmail", password: 123}
-})
+}) */
 
 const httpServer = new HTTPServer(app)
 const socketServer = new SocketServer(httpServer)
