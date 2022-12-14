@@ -1,6 +1,6 @@
-const ProductoMemoryController = require("../../controllers/memory/productoMemoryController")
+const ProductoMemoryContainer = require("../../containers/memory/productoMemoryContainer")
 
-class productoMemoryDao extends ProductoMemoryController {
+class productoMemoryDao extends ProductoMemoryContainer {
     constructor() {
         super ()
     }

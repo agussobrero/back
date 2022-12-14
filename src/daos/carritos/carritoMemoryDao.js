@@ -1,6 +1,6 @@
-const CarriroMemoryController = require("../../controllers/memory/carritoMemoryController")
+const CarriroMemoryContainer = require("../../containers/memory/carritoMemoryContainer")
 
-class carritoMemoryDao extends CarriroMemoryController {
+class carritoMemoryDao extends CarriroMemoryContainer {
     constructor() {
         super ()
     }

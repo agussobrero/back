@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-class ProductoFileController {
+class ProductoFileContainer {
     constructor (fileName) {
         this.fileName = fileName
     }
@@ -79,5 +79,5 @@ class ProductoFileController {
 } 
 
 
-module.exports = ProductoFileController
+module.exports = ProductoFileContainer
 

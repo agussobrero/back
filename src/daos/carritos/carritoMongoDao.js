@@ -1,4 +1,4 @@
-const CarritoMongoController = require("../../controllers/mongo/carritos/carritoMongoController")
+const CarritoMongoContainer = require("../../containers/mongo/carritos/carritoMongoContainer")
 const config = require("../../config/config")
 const mongoose = require("mongoose")
 const { Schema } = mongoose
@@ -9,7 +9,7 @@ const carritoSchema = new mongoose.Schema({
     productos: {type: Array}
 })
 
-class carritoMongoDao extends CarritoMongoController {
+class carritoMongoDao extends CarritoMongoContainer {
     constructor() {
         super ("carritos", carritoSchema)
     }

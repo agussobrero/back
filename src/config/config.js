@@ -22,7 +22,8 @@ try{
 
 const config = {
     mongoDb: {
-        url: "mongodb+srv://agussobrero:xpZFIMrxekWrDNMA@cluster0.7znzdl8.mongodb.net/ecommerce?retryWrites=true&w=majority",
+        url: `mongodb+srv://agussobrero:xpZFIMrxekWrDNMA@cluster0.7znzdl8.mongodb.net/ecommerce?retryWrites=true&w=majority`,
+        /* url: `mongodb+srv://${DATABASE_USER}:${DATABASE_PASSWORD}${DATABASE_CLUSTER}/${DATABASE_NAME}?retryWrites=true&w=majority`, */
         options: {
             useNewUrlParser: true,
             useUnifiedTopology: true

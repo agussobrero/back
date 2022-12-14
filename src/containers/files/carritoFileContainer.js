@@ -1,6 +1,6 @@
 const fs = require ("fs")
 
-class CarritoFileController {
+class CarritoFileContainer {
     constructor (fileName) {
         this.fileName = fileName
     }
@@ -100,6 +100,6 @@ class CarritoFileController {
     }
 }
 
-module.exports = CarritoFileController
+module.exports = CarritoFileContainer
 
 

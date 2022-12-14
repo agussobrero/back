@@ -1,10 +1,10 @@
 const mongoose = require ("mongoose")
 const {model, Types} = require ("mongoose")
-const connection = require("../index")
+const connection = require("../../../databases/mongo/index")
 
 connection()
 
-class CarritoMongoController {
+class CarritoMongoContainer {
     constructor(collection, schema) {
         this.collection = model(collection, schema)
     }
@@ -84,4 +84,4 @@ class CarritoMongoController {
     } 
 }
 
-module.exports = CarritoMongoController
+module.exports = CarritoMongoContainer

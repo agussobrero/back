@@ -1,6 +1,6 @@
 const config = require("../../config/config")
 
-class ProductoFirebaseController {
+class ProductoFirebaseContainer {
     constructor() {
         this.db = config.firebase.db,
         this.query = this.db.collection("productos")
@@ -68,4 +68,4 @@ class ProductoFirebaseController {
     }
 }  
 
-module.exports = ProductoFirebaseController
+module.exports = ProductoFirebaseContainer

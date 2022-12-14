@@ -1,6 +1,6 @@
 const fs = require ("fs")
 
-class CarritoMemoryController {
+class CarritoMemoryContainer {
     constructor () {
         this.container = [] 
     }
@@ -70,6 +70,6 @@ class CarritoMemoryController {
     }
 }
 
-module.exports = CarritoMemoryController
+module.exports = CarritoMemoryContainer
 
 

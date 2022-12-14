@@ -1,6 +1,6 @@
-const ProductoFirebaseController = require("../../controllers/firebase/productoFirebaseController")
+const ProductoFirebaseContainer = require("../../containers/firebase/productoFirebaseContainer")
 
-class productoFirebaseDao extends ProductoFirebaseController {
+class productoFirebaseDao extends ProductoFirebaseContainer {
     constructor() {
         super ()
     }

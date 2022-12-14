@@ -1,7 +1,7 @@
-const ProductoFileController = require("../../controllers/files/productoFileController")
+const ProductoFileContainer = require("../../containers/files/productoFileContainer")
 const config = require("../../config/config")
 
-class productoFileDao extends ProductoFileController {
+class productoFileDao extends ProductoFileContainer {
     constructor() {
         super (config.fileSystem.dirProductos)
     }

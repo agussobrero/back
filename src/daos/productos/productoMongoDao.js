@@ -1,4 +1,4 @@
-const ProductoMongoController = require("../../controllers/mongo/productos/productoMongoController")
+const ProductoMongoContainer = require("../../containers/mongo/productos/productoMongoContainer")
 const config = require("../../config/config")
 const mongoose = require("mongoose")
 const { Schema } = require("mongoose")
@@ -12,7 +12,7 @@ const productoSchema = new mongoose.Schema({
     stock: {type: Number, required: true}
 })
 
-class productoMongoDao extends ProductoMongoController {
+class productoMongoDao extends ProductoMongoContainer {
     constructor() {
         super ("productos", productoSchema)
     }

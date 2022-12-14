@@ -1,5 +1,5 @@
 
-class ProductoMemoryController {
+class ProductoMemoryContainer {
     constructor () {
         this.elements = []
     }
@@ -73,5 +73,5 @@ class ProductoMemoryController {
 } 
 
 
-module.exports = ProductoMemoryController
+module.exports = ProductoMemoryContainer
 

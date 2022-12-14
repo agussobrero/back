@@ -1,6 +1,6 @@
 const config = require("../../config/config")
 
-class CarritoFirebaseController {
+class CarritoFirebaseContainer {
     constructor() {
         this.db = config.firebase.db,
         this.query = this.db.collection("carritos")
@@ -76,4 +76,4 @@ class CarritoFirebaseController {
     } 
 }
 
-module.exports = CarritoFirebaseController
+module.exports = CarritoFirebaseContainer

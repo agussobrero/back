@@ -1,6 +1,6 @@
-const CarritoFirebaseController = require("../../controllers/firebase/carritoFirebaseController")
+const CarritoFirebaseContainer = require("../../containers/firebase/carritoFirebaseContainer")
 
-class carritoFirebaseDao extends CarritoFirebaseController {
+class carritoFirebaseDao extends CarritoFirebaseContainer {
     constructor() {
         super ()
     }
