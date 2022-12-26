@@ -24,7 +24,7 @@ class CarritoFileContainer {
                 carritos.push(carritoNew)
                 await fs.promises.writeFile(this.fileName, JSON.stringify(carritos, null, 2))
                 return carrito.id,
-                console.log(`Carrrito con el id:${carrito.id} `)
+                console.log(`Carrito con el id:${carrito.id} `)
                 
             }
         }

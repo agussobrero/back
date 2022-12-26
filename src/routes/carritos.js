@@ -1,7 +1,7 @@
 const { Router } = require ("express")
 const router = Router()
 const {carritosDao} = require("../daos/index")
-const authie = require ("../utils/authie")
+const authie = require ("../middlewares/auth/authie")
 
 const carrito = carritosDao
 
@@ -52,5 +52,6 @@ router.delete("/:id/productos/:id_prod", authie, async (req, res) => {
     deleteProducto = await carrito.deleteProduct(id, id_prod)
     res.status(200).json({mensaje: `Producto eliminado del carrito con id: ${id}`})
 })
+
 
 module.exports = router

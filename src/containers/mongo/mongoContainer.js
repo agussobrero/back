@@ -15,7 +15,7 @@ class MongoContainer {
             const result = await objetoNuevo.save()
             return result
         } catch (err) {
-            console.log(err)
+            logger.log("error", `Ocurrió un error: ${err}`)
         }
     }
 
@@ -24,7 +24,7 @@ class MongoContainer {
             const result = await this.Schema.find()
             return result
         } catch (err) {
-            console.log(err)
+            logger.log("error", `Ocurrió un error: ${err}`)
         }
     }
 
@@ -34,7 +34,7 @@ class MongoContainer {
             const result = await this.Schema.findOne({_id: id})
             return result
         } catch (err) {
-            console.log(err)
+            logger.log("error", `Ocurrió un error: ${err}`)
         }
     }
 
@@ -49,7 +49,7 @@ class MongoContainer {
                 carrito.save()
             }
         } catch (err) {
-            console.log(err)
+            logger.log("error", `Ocurrió un error: ${err}`)
         } 
     }
 
@@ -59,7 +59,7 @@ class MongoContainer {
             const result = await this.Schema.deleteOne({_id: id})
             return result
         } catch (err) {
-            console.log(err)
+            logger.log("error", `Ocurrió un error: ${err}`)
         }
     }
 
@@ -73,7 +73,7 @@ class MongoContainer {
                 {_id: id}, 
                 {$set: {productos: carritoProd}})
         } catch (err) {
-            console.log(err)
+            logger.log("error", `Ocurrió un error: ${err}`)
         } 
     } 
 
@@ -81,7 +81,7 @@ class MongoContainer {
         try{
             await this.Schema.deleteMany({})
         } catch (err) {
-            console.log(err)
+            logger.log("error", `Ocurrió un error: ${err}`)
         }
     }
 }
