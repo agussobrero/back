@@ -65,8 +65,10 @@ router.use((req, res, next)=> {
 })
 
 router.get("/logout", (req, res)=> {
+    const name = req.body.username
+    req.session.user = name
     res.render("logout.hbs", {user: req.session.user}) 
-    publiMail()
+    publiMail(name)
     req.session.destroy()
 })
 

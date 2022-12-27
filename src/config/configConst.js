@@ -16,7 +16,7 @@ const DATABASE_CLUSTER= process.env.DATABASE_CLUSTER
 const DATABASE_USER = process.env.DATABASE_USER
 const DATABASE_PASSWORD = process.env.DATABASE_PASSWORD
 const DATABASE_NAME = process.env.DATABASE_NAME
-const PORT = process.env.port || args.port
+const PORT = process.env.DATABASE_PORT || args.port
 const MODE = args.mode
 
 const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID

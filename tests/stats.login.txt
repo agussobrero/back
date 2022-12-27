@@ -1,0 +1,876 @@
+Statistical profiling result from isolate-0x7ff319800000-6686-v8.log, (3251 ticks, 7 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+     69    2.1%          /usr/lib/system/libsystem_pthread.dylib
+     26    0.8%          /usr/lib/system/libsystem_platform.dylib
+      6    0.2%          /usr/lib/system/libsystem_kernel.dylib
+      2    0.1%          /usr/lib/system/libsystem_malloc.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+     12    0.4%    0.4%  LazyCompile: *resolve node:path:1091:10
+      3    0.1%    0.1%  LazyCompile: *realpathSync node:fs:2425:22
+      2    0.1%    0.1%  LazyCompile: *Module._nodeModulePaths node:internal/modules/cjs/loader:629:37
+      2    0.1%    0.1%  Function: ^readSync node:fs:684:18
+      1    0.0%    0.0%  RegExp: (?:^|\/)\.?\.$
+      1    0.0%    0.0%  LazyCompile: *normalizeString node:path:66:25
+      1    0.0%    0.0%  LazyCompile: *dirname node:path:1275:10
+      1    0.0%    0.0%  Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      1    0.0%    0.0%  Function: ^validateString node:internal/validators:118:24
+      1    0.0%    0.0%  Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      1    0.0%    0.0%  Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      1    0.0%    0.0%  Function: ^compileFunction node:vm:308:25
+      1    0.0%    0.0%  Function: ^Readable.on node:internal/streams/readable:874:33
+      1    0.0%    0.0%  Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    0.0%    0.0%  Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+
+ [C++]:
+   ticks  total  nonlib   name
+   1141   35.1%   36.2%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+    862   26.5%   27.4%  t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+    505   15.5%   16.0%  t node::fs::Read(v8::FunctionCallbackInfo<v8::Value> const&)
+    101    3.1%    3.2%  T __kernelrpc_thread_policy_set
+     85    2.6%    2.7%  t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+     63    1.9%    2.0%  T _vm_copy
+     49    1.5%    1.6%  t node::fs::InternalModuleStat(v8::FunctionCallbackInfo<v8::Value> const&)
+     44    1.4%    1.4%  t node::fs::Open(v8::FunctionCallbackInfo<v8::Value> const&)
+     16    0.5%    0.5%  T ___ulock_wait
+     13    0.4%    0.4%  t std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
+     13    0.4%    0.4%  T _task_policy_set
+     11    0.3%    0.3%  t ___vfprintf
+     11    0.3%    0.3%  T _read$NOCANCEL
+     11    0.3%    0.3%  T ___sfp
+     10    0.3%    0.3%  t ___vfwscanf
+     10    0.3%    0.3%  T _open$NOCANCEL
+      9    0.3%    0.3%  T _mach_msg_server
+      7    0.2%    0.2%  t _small_malloc_should_clear
+      7    0.2%    0.2%  t _free_tiny
+      7    0.2%    0.2%  T _inet_net_pton
+      7    0.2%    0.2%  T ___sflags
+      6    0.2%    0.2%  t node::fs::FStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      5    0.2%    0.2%  t std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char)
+      5    0.2%    0.2%  t std::__1::basic_istream<wchar_t, std::__1::char_traits<wchar_t> >& std::__1::__input_arithmetic<long long, wchar_t, std::__1::char_traits<wchar_t> >(std::__1::basic_istream<wchar_t, std::__1::char_traits<wchar_t> >&, long long&)
+      5    0.2%    0.2%  T node::binding::GetInternalBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      5    0.2%    0.2%  T _semaphore_create
+      4    0.1%    0.1%  t std::__1::messages_byname<char>::~messages_byname()
+      4    0.1%    0.1%  t _tiny_free_no_lock
+      4    0.1%    0.1%  t _rack_region_insert
+      4    0.1%    0.1%  T node::fs::Close(v8::FunctionCallbackInfo<v8::Value> const&)
+      4    0.1%    0.1%  T _kdebug_typefilter
+      4    0.1%    0.1%  T _fopen
+      3    0.1%    0.1%  t void node::Buffer::(anonymous namespace)::StringSlice<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&)
+      3    0.1%    0.1%  t _tiny_malloc_should_clear
+      3    0.1%    0.1%  t _nanov2_find_block_and_allocate
+      3    0.1%    0.1%  t ___printf_render_quote
+      3    0.1%    0.1%  T ___bsdthread_create
+      2    0.1%    0.1%  t std::__1::istreambuf_iterator<wchar_t, std::__1::char_traits<wchar_t> > std::__1::num_get<wchar_t, std::__1::istreambuf_iterator<wchar_t, std::__1::char_traits<wchar_t> > >::__do_get_floating_point<double>(std::__1::istreambuf_iterator<wchar_t, std::__1::char_traits<wchar_t> >, std::__1::istreambuf_iterator<wchar_t, std::__1::char_traits<wchar_t> >, std::__1::ios_base&, unsigned int&, double&) const
+      2    0.1%    0.1%  t std::__1::basic_istream<wchar_t, std::__1::char_traits<wchar_t> >& std::__1::__input_arithmetic<unsigned long long, wchar_t, std::__1::char_traits<wchar_t> >(std::__1::basic_istream<wchar_t, std::__1::char_traits<wchar_t> >&, unsigned long long&)
+      2    0.1%    0.1%  t node::fs::LStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.1%    0.1%  t node::fs::FillGlobalStatsArray(node::fs::BindingData*, bool, uv_stat_t const*, bool)
+      2    0.1%    0.1%  t dyld3::Loader::mapAndFixupAllImages(Diagnostics&, bool, bool)
+      2    0.1%    0.1%  t _tiny_free_list_remove_ptr
+      2    0.1%    0.1%  t _tiny_free_list_add_ptr
+      2    0.1%    0.1%  t _szone_realloc
+      2    0.1%    0.1%  t _nanov2_malloc
+      2    0.1%    0.1%  t _free_small
+      2    0.1%    0.1%  t __platform_memmove$VARIANT$Haswell
+      2    0.1%    0.1%  t __cxxabiv1::__free_with_fallback(void*)
+      2    0.1%    0.1%  t (anonymous namespace)::fallback_free(void*)
+      2    0.1%    0.1%  T std::__1::locale::classic()
+      2    0.1%    0.1%  T std::__1::basic_istream<wchar_t, std::__1::char_traits<wchar_t> >::get()
+      2    0.1%    0.1%  T _fgetws
+      2    0.1%    0.1%  T __platform_strncmp
+      1    0.0%    0.0%  t std::__1::moneypunct<wchar_t, false>::~moneypunct()
+      1    0.0%    0.0%  t std::__1::locale::__imp::__imp(std::__1::locale::__imp const&, std::__1::locale::facet*, long)
+      1    0.0%    0.0%  t std::__1::istreambuf_iterator<wchar_t, std::__1::char_traits<wchar_t> > std::__1::num_get<wchar_t, std::__1::istreambuf_iterator<wchar_t, std::__1::char_traits<wchar_t> > >::__do_get_unsigned<unsigned long long>(std::__1::istreambuf_iterator<wchar_t, std::__1::char_traits<wchar_t> >, std::__1::istreambuf_iterator<wchar_t, std::__1::char_traits<wchar_t> >, std::__1::ios_base&, unsigned int&, unsigned long long&) const
+      1    0.0%    0.0%  t std::__1::__shared_ptr_pointer<node::inspector::protocol::NodeRuntime::Frontend*, std::__1::default_delete<node::inspector::protocol::NodeRuntime::Frontend>, std::__1::allocator<node::inspector::protocol::NodeRuntime::Frontend> >::__on_zero_shared_weak()
+      1    0.0%    0.0%  t node::errors::SetSourceMapsEnabled(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t node::EnvGetter(v8::Local<v8::Name>, v8::PropertyCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t node::AliasedBufferBase<unsigned int, v8::Uint32Array, void>::AliasedBufferBase(v8::Isolate*, unsigned long, unsigned long const*)
+      1    0.0%    0.0%  t _tiny_malloc_from_free_list
+      1    0.0%    0.0%  t _szone_free
+      1    0.0%    0.0%  t _small_malloc_from_free_list
+      1    0.0%    0.0%  t _nanov2_pointer_size
+      1    0.0%    0.0%  t __cxxabiv1::__shim_type_info::~__shim_type_info()
+      1    0.0%    0.0%  t __cxxabiv1::__function_type_info::~__function_type_info()
+      1    0.0%    0.0%  t ___srefill1
+      1    0.0%    0.0%  t ___srefill0
+      1    0.0%    0.0%  t ___find_warguments
+      1    0.0%    0.0%  T std::__1::basic_ostream<char, std::__1::char_traits<char> >::basic_ostream(std::__1::basic_streambuf<char, std::__1::char_traits<char> >*)
+      1    0.0%    0.0%  T node::loader::ModuleWrap::Evaluate(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T node::cares_wrap::SrvTraits::Parse(node::cares_wrap::QueryWrap<node::cares_wrap::SrvTraits>*, std::__1::unique_ptr<node::cares_wrap::ResponseData, std::__1::default_delete<node::cares_wrap::ResponseData> > const&)
+      1    0.0%    0.0%  T node::cares_wrap::ChannelWrap::New(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T node::binding::DLOpen(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T node::NodeArrayBufferAllocator::Allocate(unsigned long)
+      1    0.0%    0.0%  T node::BaseObject::LazilyInitializedJSTemplateConstructor(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T _scanf
+      1    0.0%    0.0%  T _malloc_zone_malloc
+      1    0.0%    0.0%  T _malloc_zone_from_ptr
+      1    0.0%    0.0%  T _fileno
+      1    0.0%    0.0%  T ___ungetc
+      1    0.0%    0.0%  T ___thread_selfid
+      1    0.0%    0.0%  T ___collate_equiv_match
+
+ [Summary]:
+   ticks  total  nonlib   name
+     30    0.9%    1.0%  JavaScript
+   3111   95.7%   98.8%  C++
+     70    2.2%    2.2%  GC
+    103    3.2%          Shared libraries
+      7    0.2%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+   2917   99.3%   89.7%  t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+     10    0.3%    0.3%  T _open$NOCANCEL
+      9    0.3%    0.3%  T _mach_msg_server
+      2    0.1%    0.1%  t node::fs::FillGlobalStatsArray(node::fs::BindingData*, bool, uv_stat_t const*, bool)
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   1141   35.1%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+   1141  100.0%    t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+   1133   99.3%      Function: ^compileFunction node:vm:308:25
+   1123   99.1%        Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+   1122   99.9%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+   1101   98.1%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     21    1.9%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+
+    862   26.5%  t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+    555   64.4%    t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+     95   17.1%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     73   76.8%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+     12   16.4%          Function: ~<anonymous> node:crypto:1:1
+     12  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     11   15.1%          Function: ~<anonymous> node:http:1:1
+     11  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      9   12.3%          Function: ~<anonymous> node:tls:1:1
+      9  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      6    8.2%          Function: ~<anonymous> node:_http_client:1:1
+      6  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      5    6.8%          Function: ~<anonymous> node:internal/child_process:1:1
+      5  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      5    6.8%          Function: ~<anonymous> node:child_process:1:1
+      5  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    4.1%          Function: ~<anonymous> node:https:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    4.1%          Function: ~<anonymous> node:assert:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    2.7%          LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      2  100.0%            LazyCompile: ~get node:crypto:287:8
+      2    2.7%          LazyCompile: ~lazyLoadStreams node:fs:2858:25
+      2  100.0%            LazyCompile: ~get ReadStream node:fs:3001:17
+      2    2.7%          Function: ~<anonymous> node:cluster:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    2.7%          Function: ~<anonymous> node:_tls_common:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    2.7%          Function: ~<anonymous> node:_http_common:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.4%          LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:477:29
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      1    1.4%          LazyCompile: ~get node:dns:334:8
+      1  100.0%            t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      1    1.4%          Function: ~<anonymous> node:tty:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.4%          Function: ~<anonymous> node:internal/crypto/util:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.4%          Function: ~<anonymous> node:internal/crypto/pbkdf2:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.4%          Function: ~<anonymous> node:internal/crypto/hkdf:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.4%          Function: ~<anonymous> node:internal/cluster/round_robin_handle:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.4%          Function: ~<anonymous> node:dns:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.4%          Function: ~<anonymous> node:_tls_wrap:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     19   20.0%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+     19  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+     19  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      3    3.2%        LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      2   66.7%          LazyCompile: ~loadNativeModule node:internal/modules/cjs/helpers:44:26
+      2  100.0%            LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+      1   33.3%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     50    9.0%      t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      6   12.0%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      6  100.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      6  100.0%            Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      3    6.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      2   66.7%          LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2  100.0%            LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+      1   33.3%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      2    4.0%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@colors/colors/lib/colors.js:96:23
+      2  100.0%          Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@colors/colors/lib/colors.js:1:1
+      2  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      2    4.0%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2    4.0%        Function: ^<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:78:43
+      2  100.0%          LazyCompile: ~prepareHandshakeDocument /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:151:34
+      2  100.0%            LazyCompile: ~performInitialHandshake /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:62:33
+      1    2.0%        t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      1  100.0%          Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@google-cloud/firestore/build/src/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1    2.0%        LazyCompile: ~resolvePackageTargetString node:internal/modules/esm/resolve:507:36
+      1  100.0%          LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:572:30
+      1  100.0%            LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:572:30
+      1    2.0%        LazyCompile: ~resolveAuthMechanism /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/auth/mongo_credentials.js:76:25
+      1  100.0%          LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:88:85
+      1  100.0%            LazyCompile: ~onMessage /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connection.js:156:14
+      1    2.0%        LazyCompile: ~prepareStackTrace node:internal/errors:91:27
+      1  100.0%          t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      1  100.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/q/q.js:1:1
+      1    2.0%        LazyCompile: ~o /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:937
+      1  100.0%          LazyCompile: ~h /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:1448
+      1  100.0%            LazyCompile: ~addHelpOpt /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:29439
+      1    2.0%        LazyCompile: ~normalizeString node:path:66:25
+      1  100.0%          LazyCompile: ~resolve node:path:1091:10
+      1  100.0%            LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:89:28
+      1    2.0%        LazyCompile: ~normalizeKey /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/nodemailer/lib/well-known/index.js:20:22
+      1  100.0%          LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/nodemailer/lib/well-known/index.js:6:31
+      1  100.0%            t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      1    2.0%        LazyCompile: ~module.exports.assign /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/nodemailer/lib/shared/index.js:497:34
+      1  100.0%          LazyCompile: ~SMTPTransport /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/nodemailer/lib/smtp-transport/index.js:17:16
+      1  100.0%            LazyCompile: ~module.exports.createTransport /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/nodemailer/lib/nodemailer.js:20:43
+      1    2.0%        LazyCompile: ~module.exports /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@colors/colors/lib/system/has-flag.js:27:26
+      1  100.0%          Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@colors/colors/lib/system/supports-colors.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1    2.0%        LazyCompile: ~isIPv6 node:internal/net:35:16
+      1  100.0%          LazyCompile: ~isIP node:internal/net:39:14
+      1  100.0%            LazyCompile: ~parseSslOptions /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:237:25
+      1    2.0%        LazyCompile: ~isBad node:tls:189:17
+      1  100.0%          t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      1  100.0%            LazyCompile: ~check node:tls:171:15
+      1    2.0%        LazyCompile: ~getStack /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/depd/index.js:381:19
+      1  100.0%          LazyCompile: ~depd /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/depd/index.js:103:15
+      1  100.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/body-parser/index.js:1:1
+      1    2.0%        LazyCompile: ~finalizeEsmResolution node:internal/modules/cjs/loader:939:31
+      1  100.0%          Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1    2.0%        LazyCompile: ~createToken /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@mapbox/node-pre-gyp/node_modules/semver/internal/re.js:11:21
+      1  100.0%          Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@mapbox/node-pre-gyp/node_modules/semver/internal/re.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1    2.0%        LazyCompile: ~command /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connection.js:251:12
+      1  100.0%          LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:78:43
+      1  100.0%            LazyCompile: ~prepareHandshakeDocument /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:151:34
+      1    2.0%        LazyCompile: ~checkServerIdentity node:tls:274:59
+      1  100.0%          LazyCompile: ~onConnectSecure node:_tls_wrap:1518:25
+      1  100.0%            Function: ^emit node:events:475:44
+      1    2.0%        LazyCompile: ~addColors /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/logform/colorize.js:36:19
+      1  100.0%          LazyCompile: ~module.exports /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/logform/levels.js:9:18
+      1  100.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/winston/lib/winston/config/index.js:1:1
+      1    2.0%        LazyCompile: ~_getHostname /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/nodemailer/lib/smtp-connection/index.js:1762:17
+      1  100.0%          LazyCompile: ~SMTPConnection /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/nodemailer/lib/smtp-connection/index.js:47:16
+      1  100.0%            LazyCompile: ~SMTPTransport /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/nodemailer/lib/smtp-transport/index.js:17:16
+      1    2.0%        LazyCompile: ~Schema.pathType /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/schema.js:1420:37
+      1  100.0%          LazyCompile: ~Schema.virtual /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/schema.js:2000:36
+      1  100.0%            LazyCompile: ~addIdGetter /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/helpers/schema/idGetter.js:7:38
+      1    2.0%        LazyCompile: ~Schema.path /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/schema.js:832:33
+      1  100.0%          LazyCompile: ~Document.$__setSchema /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/document.js:3396:43
+      1  100.0%            LazyCompile: ~compile /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/model.js:4974:33
+      1    2.0%        LazyCompile: ~Monitor /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/sdam/monitor.js:41:16
+      1  100.0%          Function: ^Server /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/sdam/server.js:28:16
+      1  100.0%            Function: ^createAndConnectServer /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/sdam/topology.js:475:32
+      1    2.0%        LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/helpers/pluralize.js:86:34
+      1  100.0%          t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      1  100.0%            LazyCompile: ~pluralize /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/helpers/pluralize.js:82:19
+      1    2.0%        LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:78:43
+      1  100.0%          LazyCompile: ~prepareHandshakeDocument /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:151:34
+      1  100.0%            LazyCompile: ~performInitialHandshake /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:62:33
+      1    2.0%        Function: ~<anonymous> node:_http_server:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    2.0%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mquery/lib/mquery.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    2.0%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/ipaddr.js/lib/ipaddr.js:1:10
+      1  100.0%          Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/ipaddr.js/lib/ipaddr.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1    2.0%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/express/lib/express.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    2.0%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@google-cloud/firestore/build/src/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    2.0%        Function: ^translatePeerCertificate node:_tls_common:125:34
+      1  100.0%          LazyCompile: ~TLSSocket.getPeerCertificate node:_tls_wrap:986:50
+      1  100.0%            LazyCompile: ~onConnectSecure node:_tls_wrap:1518:25
+      1    2.0%        Function: ^stat node:internal/modules/cjs/loader:151:14
+      1  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1    2.0%        Function: ^compileFunction node:vm:308:25
+      1  100.0%          Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1    2.0%        Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1    2.0%        Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%          Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1  100.0%            Function: ^require node:internal/modules/cjs/helpers:101:31
+      1    2.0%        Function: ^Module node:internal/modules/cjs/loader:172:16
+      1  100.0%          LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1    2.0%        Function: ^<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/helpers/pluralize.js:86:34
+      1  100.0%          t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      1  100.0%            LazyCompile: ~pluralize /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/helpers/pluralize.js:82:19
+     41    7.4%      LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     41  100.0%        LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      8   19.5%          Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      8  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      6   14.6%          Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      6  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      5   12.2%          LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:477:29
+      5  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      5   12.2%          Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      5  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    7.3%          Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      3  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    4.9%          Function: ~<anonymous> node:net:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    4.9%          Function: ~<anonymous> node:internal/modules/esm/module_map:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          LazyCompile: ~initializeSourceMapsHandlers node:internal/bootstrap/pre_execution:516:38
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      1    2.4%          LazyCompile: ~initializeReport node:internal/bootstrap/pre_execution:238:26
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      1    2.4%          LazyCompile: ~get BlockList node:net:1826:16
+      1  100.0%            Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      1    2.4%          Function: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          Function: ~<anonymous> node:internal/modules/esm/resolve:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          Function: ~<anonymous> node:internal/modules/esm/get_format:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          Function: ~<anonymous> node:internal/modules/cjs/loader:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.4%          Function: ~<anonymous> node:internal/fs/promises:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    2.4%          Function: ~<anonymous> node:internal/blocklist:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     29    5.2%      Function: ^resolve node:path:1091:10
+     29  100.0%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+     28   96.6%          LazyCompile: ~resolveExports node:internal/modules/cjs/loader:472:24
+     28  100.0%            LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1    3.4%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%            Function: ^trySelf node:internal/modules/cjs/loader:441:17
+     17    3.1%      LazyCompile: ~pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+     17  100.0%        LazyCompile: ~HI /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/auth/scram.js:238:12
+     17  100.0%          LazyCompile: ~continueScramConversation /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/auth/scram.js:93:35
+     17  100.0%            LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/auth/scram.js:85:80
+     13    2.3%      LazyCompile: ~configSecureContext node:internal/tls/secure-context:120:29
+     13  100.0%        LazyCompile: ~createSecureContext node:_tls_common:99:29
+     13  100.0%          LazyCompile: ~connect node:_tls_wrap:1599:35
+     13  100.0%            LazyCompile: ~makeConnection /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:256:24
+     11    2.0%      LazyCompile: *realpathSync node:fs:2425:22
+      8   72.7%        Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      8  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      6   75.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      2   25.0%            Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      3   27.3%        LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      3  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      3  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      7    1.3%      LazyCompile: ~Module._extensions..json node:internal/modules/cjs/loader:1164:39
+      7  100.0%        Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      7  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      7  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      7    1.3%      LazyCompile: *resolve node:path:1091:10
+      3   42.9%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      3  100.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      2   66.7%            Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      1   33.3%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1   14.3%        LazyCompile: *readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%          Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1   14.3%        Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      1  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1   14.3%        Function: ^Module._nodeModulePaths node:internal/modules/cjs/loader:629:37
+      1  100.0%          Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1   14.3%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      6    1.1%      Function: ^getOptions node:internal/fs/utils:315:20
+      6  100.0%        Function: ^readFileSync node:fs:450:22
+      5   83.3%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      5  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1   16.7%          LazyCompile: ~Module._extensions..json node:internal/modules/cjs/loader:1164:39
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+     11    1.3%    Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      8   72.7%      Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      7   87.5%        Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      7  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      7  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1   12.5%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%          Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2   18.2%      LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%        Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1    9.1%      Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      1  100.0%        LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     10    1.2%    Function: ^Module.load node:internal/modules/cjs/loader:969:33
+     10  100.0%      Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     10  100.0%        Function: ^Module.require node:internal/modules/cjs/loader:997:36
+     10  100.0%          Function: ^require node:internal/modules/cjs/helpers:101:31
+      1   10.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/src/config/configConst.js:1:1
+      1   10.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/schematype.js:1:1
+      1   10.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/helpers/clone.js:1:1
+      1   10.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:1:1
+      1   10.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/connection_string.js:1:1
+      1   10.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/express/lib/response.js:1:1
+      1   10.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@mapbox/node-pre-gyp/node_modules/semver/index.js:1:1
+      1   10.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@mapbox/node-pre-gyp/lib/node-pre-gyp.js:1:1
+      1   10.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@google-cloud/firestore/build/src/logger.js:1:1
+      1   10.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@google-cloud/firestore/build/src/document.js:1:1
+
+    505   15.5%  t node::fs::Read(v8::FunctionCallbackInfo<v8::Value> const&)
+    505  100.0%    t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+    500   99.0%      Function: ^readSync node:fs:684:18
+    500  100.0%        Function: ^tryReadSync node:fs:429:21
+    500  100.0%          Function: ^readFileSync node:fs:450:22
+    462   92.4%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     31    6.2%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      5    1.0%            LazyCompile: ~Module._extensions..json node:internal/modules/cjs/loader:1164:39
+
+    101    3.1%  T __kernelrpc_thread_policy_set
+
+     85    2.6%  t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+     85  100.0%    t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+     80   94.1%      Function: ^read node:internal/modules/package_json_reader:16:14
+     80  100.0%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+     55   68.8%          Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+     55  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+     22   27.5%          LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+     22  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2    2.5%          LazyCompile: ~resolveExports node:internal/modules/cjs/loader:472:24
+      2  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1    1.3%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      5    5.9%      LazyCompile: ~read node:internal/modules/package_json_reader:16:14
+      3   60.0%        LazyCompile: ~readPackage node:internal/modules/cjs/loader:290:21
+      3  100.0%          LazyCompile: ~resolveExports node:internal/modules/cjs/loader:472:24
+      3  100.0%            LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      2   40.0%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      2  100.0%          LazyCompile: ~resolveExports node:internal/modules/cjs/loader:472:24
+      2  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+
+     69    2.1%  /usr/lib/system/libsystem_pthread.dylib
+     64   92.8%    t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      4    6.3%      LazyCompile: ~realpathSync node:fs:2425:22
+      4  100.0%        LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      4  100.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      4  100.0%            LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      3    4.7%      t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      2   66.7%        LazyCompile: ~getStack /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/depd/index.js:381:19
+      2  100.0%          LazyCompile: ~depd /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/depd/index.js:103:15
+      2  100.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/body-parser/index.js:1:1
+      1   33.3%        LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:1155
+      1  100.0%          t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      1  100.0%            LazyCompile: ~o /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:937
+      3    4.7%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      3  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      3  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      3  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      3    4.7%      LazyCompile: ~nextTick node:internal/process/task_queues:104:18
+      3  100.0%        LazyCompile: ~resume /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/readable-stream/lib/_stream_readable.js:902:16
+      3  100.0%          LazyCompile: ~Readable.resume /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/readable-stream/lib/_stream_readable.js:886:38
+      3  100.0%            LazyCompile: ~Readable.on /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/readable-stream/lib/_stream_readable.js:804:34
+      3    4.7%      LazyCompile: ~getVersionString /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/nodemailer/lib/mailer/index.js:238:21
+      3  100.0%        LazyCompile: ~Mail /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/nodemailer/lib/mailer/index.js:24:16
+      3  100.0%          LazyCompile: ~module.exports.createTransport /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/nodemailer/lib/nodemailer.js:20:43
+      3  100.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/src/services/twilio.js:1:1
+      3    4.7%      Function: ~<anonymous> node:internal/fs/promises:1:1
+      3  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      3  100.0%            Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      2    3.1%      LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:89:28
+      2  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      2  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      2    3.1%      LazyCompile: ~createHash node:crypto:129:20
+      2  100.0%        LazyCompile: ~passwordDigest /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/auth/scram.js:182:24
+      2  100.0%          LazyCompile: ~continueScramConversation /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/auth/scram.js:93:35
+      2  100.0%            LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/auth/scram.js:85:80
+      2    3.1%      Function: ~<anonymous> node:internal/modules/cjs/helpers:1:1
+      2  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2  100.0%            Function: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      1    1.6%      LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1017:18
+      1  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1    1.6%      LazyCompile: ~validate_config /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js:195:25
+      1  100.0%        LazyCompile: ~exports.find /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@mapbox/node-pre-gyp/lib/pre-binding.js:17:24
+      1  100.0%          Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/bcrypt/bcrypt.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1    1.6%      LazyCompile: ~util.isArrayBuffer /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/node-forge/lib/util.js:132:30
+      1  100.0%        LazyCompile: ~ByteStringBuffer /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/node-forge/lib/util.js:167:26
+      1  100.0%          LazyCompile: ~util.createBuffer /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/node-forge/lib/util.js:1422:29
+      1  100.0%            LazyCompile: ~md.start /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/node-forge/lib/sha256.js:55:22
+      1    1.6%      LazyCompile: ~utf8Encode /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/whatwg-url/lib/encoding.js:5:20
+      1  100.0%        LazyCompile: ~utf8PercentEncodeCodePointInternal /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/whatwg-url/lib/percent-encoding.js:97:44
+      1  100.0%          LazyCompile: ~utf8PercentEncodeCodePoint /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/whatwg-url/lib/percent-encoding.js:112:36
+      1  100.0%            LazyCompile: ~parseAuthority /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/whatwg-url/lib/url-state-machine.js:731:71
+      1    1.6%      LazyCompile: ~setupWarningHandler node:internal/bootstrap/pre_execution:142:29
+      1  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      1  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.6%      LazyCompile: ~setupDebugEnv node:internal/bootstrap/pre_execution:249:23
+      1  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      1  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.6%      LazyCompile: ~setImmediate node:timers:278:22
+      1  100.0%        LazyCompile: ~log /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/winston/lib/winston/transports/console.js:44:6
+      1  100.0%          LazyCompile: ~_write /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/winston-transport/index.js:69:51
+      1  100.0%            LazyCompile: ~doWrite /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/readable-stream/lib/_stream_writable.js:404:17
+      1    1.6%      LazyCompile: ~serialize /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/bson/lib/bson.js:110:19
+      1  100.0%        LazyCompile: ~toBin /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/commands.js:82:10
+      1  100.0%          LazyCompile: ~writeCommand /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/message_stream.js:40:17
+      1  100.0%            LazyCompile: ~write /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connection.js:403:15
+      1    1.6%      LazyCompile: ~registerDefaultHelpers /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/handlebars/dist/cjs/handlebars/helpers.js:38:32
+      1  100.0%        LazyCompile: ~HandlebarsEnvironment /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/handlebars/dist/cjs/handlebars/base.js:46:31
+      1  100.0%          LazyCompile: ~create /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/handlebars/dist/cjs/handlebars.runtime.js:40:16
+      1  100.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/handlebars/dist/cjs/handlebars.runtime.js:1:1
+      1    1.6%      LazyCompile: ~read /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/saslprep/lib/memory-code-points.js:15:14
+      1  100.0%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/saslprep/lib/memory-code-points.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.6%      LazyCompile: ~pki.privateKeyFromPem /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/node-forge/lib/pki.js:51:33
+      1  100.0%        LazyCompile: ~ServiceAccount /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/app/credential-internal.js:118:16
+      1  100.0%          LazyCompile: ~ServiceAccountCredential /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/app/credential-internal.js:65:16
+      1  100.0%            LazyCompile: ~cert /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/app/credential-factory.js:100:14
+      1    1.6%      LazyCompile: ~nopt /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@mapbox/node-pre-gyp/node_modules/nopt/lib/nopt.js:26:15
+      1  100.0%        LazyCompile: ~parseOpts /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@mapbox/node-pre-gyp/lib/node-pre-gyp.js:144:37
+      1  100.0%          LazyCompile: ~Run /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@mapbox/node-pre-gyp/lib/node-pre-gyp.js:78:13
+      1  100.0%            LazyCompile: ~exports.find /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@mapbox/node-pre-gyp/lib/pre-binding.js:17:24
+      1    1.6%      LazyCompile: ~log /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/winston/lib/winston/transports/console.js:44:6
+      1  100.0%        LazyCompile: ~_write /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/winston-transport/index.js:69:51
+      1  100.0%          LazyCompile: ~doWrite /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/readable-stream/lib/_stream_writable.js:404:17
+      1  100.0%            LazyCompile: ~writeOrBuffer /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/readable-stream/lib/_stream_writable.js:363:23
+      1    1.6%      LazyCompile: ~insert node:internal/timers:350:16
+      1  100.0%        LazyCompile: ~setUnrefTimeout node:internal/timers:372:25
+      1  100.0%          LazyCompile: ~setStreamTimeout node:internal/stream_base_commons:237:26
+      1  100.0%            LazyCompile: ~makeConnection /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:256:24
+      1    1.6%      LazyCompile: ~from node:buffer:296:28
+      1  100.0%        LazyCompile: ~xor /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/auth/scram.js:208:13
+      1  100.0%          LazyCompile: ~continueScramConversation /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/auth/scram.js:93:35
+      1  100.0%            LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/auth/scram.js:85:80
+      1    1.6%      LazyCompile: ~forEach /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/axios/lib/utils.js:230:17
+      1  100.0%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/axios/lib/defaults/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.6%      LazyCompile: ~deserialize /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/bson/lib/parser/deserializer.js:36:21
+      1  100.0%        LazyCompile: ~deserialize /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/bson/lib/bson.js:161:21
+      1  100.0%          LazyCompile: ~parse /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/commands.js:222:10
+      1  100.0%            LazyCompile: ~onMessage /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connection.js:156:14
+      1    1.6%      LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1  100.0%        LazyCompile: ~getStderr node:internal/bootstrap/switches/is_main_thread:137:19
+      1  100.0%          Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/debug/src/node.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1    1.6%      LazyCompile: ~createInstance /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/axios/lib/axios.js:15:24
+      1  100.0%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/axios/lib/axios.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.6%      LazyCompile: ~createHttpErrorConstructor /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/http-errors/index.js:112:37
+      1  100.0%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/http-errors/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.6%      LazyCompile: ~createDebug /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/https-proxy-agent/node_modules/debug/src/common.js:60:22
+      1  100.0%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/https-proxy-agent/dist/parse-proxy-response.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.6%      LazyCompile: ~checkIn /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connection_pool.js:175:12
+      1  100.0%        LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connection_pool.js:293:27
+      1  100.0%          LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/sdam/server.js:210:101
+      1  100.0%            LazyCompile: ~handleOperationResult /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/sdam/server.js:282:42
+      1    1.6%      LazyCompile: ~_write node:internal/streams/writable:283:16
+      1  100.0%        LazyCompile: ~Writable.write node:internal/streams/writable:333:36
+      1  100.0%          LazyCompile: ~log /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/winston/lib/winston/transports/console.js:44:6
+      1  100.0%            LazyCompile: ~_write /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/winston-transport/index.js:69:51
+      1    1.6%      LazyCompile: ~Pager.set /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/memory-pager/index.js:81:32
+      1  100.0%        LazyCompile: ~Bitfield /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/sparse-bitfield/index.js:5:19
+      1  100.0%          LazyCompile: ~Bitfield /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/sparse-bitfield/index.js:5:19
+      1  100.0%            LazyCompile: ~read /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/saslprep/lib/memory-code-points.js:15:14
+      1    1.6%      LazyCompile: ~MongoClient /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/mongo_client.js:63:16
+      1  100.0%        LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/connection.js:798:31
+      1  100.0%          t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      1  100.0%            LazyCompile: ~Connection.openUri /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/connection.js:680:40
+      1    1.6%      LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%        LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%          LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.6%      LazyCompile: ~Module._extensions..json node:internal/modules/cjs/loader:1164:39
+      1  100.0%        Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1    1.6%      LazyCompile: ~MessageStream /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/message_stream.js:21:16
+      1  100.0%        LazyCompile: ~Connection /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connection.js:37:16
+      1  100.0%          LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:31:63
+      1  100.0%            LazyCompile: ~callback /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:269:31
+      1    1.6%      LazyCompile: ~<anonymous> node:internal/validators:101:40
+      1  100.0%        Function: ^compileFunction node:vm:308:25
+      1  100.0%          Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1    1.6%      LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/connection.js:841:7
+      1  100.0%        t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      1  100.0%          Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.6%      LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/lodash/lodash.js:17077:47
+      1  100.0%        LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/lodash/lodash.js:4959:22
+      1  100.0%          LazyCompile: ~baseForOwn /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/lodash/lodash.js:3031:24
+      1  100.0%            Function: ~runInContext /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/lodash/lodash.js:1448:44
+      1    1.6%      Function: ~<anonymous> node:internal/fs/rimraf:1:1
+      1  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:internal/fs/promises:1:1
+      1    1.6%      Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/whatwg-url/lib/encoding.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.6%      Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/connection_string.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.6%      Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/lodash/lodash.js:9:11
+      1  100.0%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/lodash/lodash.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    1.6%      Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/agent-base/dist/src/index.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.6%      Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@dabh/diagnostics/adapters/process.env.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.6%      Function: ^emit node:events:475:44
+      1  100.0%        LazyCompile: ~Readable.read node:internal/streams/readable:394:35
+      1  100.0%          LazyCompile: ~flow node:internal/streams/readable:1008:14
+      1  100.0%            LazyCompile: ~resume_ node:internal/streams/readable:984:17
+      1    1.6%      Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%        Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1  100.0%          Function: ^require node:internal/modules/cjs/helpers:101:31
+      1  100.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/aggregate.js:1:1
+
+     63    1.9%  T _vm_copy
+     50   79.4%    t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      7   14.0%      t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      1   14.3%        LazyCompile: ~makeConnection /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:256:24
+      1  100.0%          LazyCompile: ~connect /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connect.js:30:17
+      1  100.0%            LazyCompile: ~checkServer /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/sdam/monitor.js:143:21
+      1   14.3%        LazyCompile: ~getStack /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/depd/index.js:381:19
+      1  100.0%          LazyCompile: ~depd /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/depd/index.js:103:15
+      1  100.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/body-parser/index.js:1:1
+      1   14.3%        LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:56853
+      1  100.0%          LazyCompile: ~parse /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:39721
+      1  100.0%            LazyCompile: ~get /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:61383
+      1   14.3%        LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs-parser/build/index.cjs:240:48
+      1  100.0%          t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      1  100.0%            LazyCompile: ~parse /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs-parser/build/index.cjs:108:10
+      1   14.3%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/winston/lib/winston.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1   14.3%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/node-forge/lib/ed25519.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1   14.3%        Function: ^<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/helpers/pluralize.js:86:34
+      1  100.0%          t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      1  100.0%            LazyCompile: ~pluralize /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/helpers/pluralize.js:82:19
+      1    2.0%      LazyCompile: ~toString node:internal/url:732:11
+      1  100.0%        LazyCompile: ~URL node:internal/url:621:14
+      1  100.0%          LazyCompile: ~URL node:internal/url:621:14
+      1  100.0%            LazyCompile: ~resolvePackageTargetString node:internal/modules/esm/resolve:507:36
+      1    2.0%      LazyCompile: ~setup /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mquery/node_modules/debug/src/common.js:7:15
+      1  100.0%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mquery/node_modules/debug/src/node.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    2.0%      LazyCompile: ~setOption /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/connection_string.js:406:19
+      1  100.0%        LazyCompile: ~parseOptions /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/connection_string.js:204:22
+      1  100.0%          LazyCompile: ~MongoClient /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/mongo_client.js:63:16
+      1  100.0%            LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/connection.js:798:31
+      1    2.0%      LazyCompile: ~setImmediate node:timers:278:22
+      1  100.0%        LazyCompile: ~log /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/winston/lib/winston/transports/console.js:44:6
+      1  100.0%          LazyCompile: ~_write /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/winston-transport/index.js:69:51
+      1  100.0%            LazyCompile: ~doWrite /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/readable-stream/lib/_stream_writable.js:404:17
+      1    2.0%      LazyCompile: ~resolve node:path:1091:10
+      1  100.0%        LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:89:28
+      1  100.0%          LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.0%      LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:68:35
+      1    2.0%      LazyCompile: ~pki.privateKeyFromPem /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/node-forge/lib/pki.js:51:33
+      1  100.0%        LazyCompile: ~ServiceAccount /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/app/credential-internal.js:118:16
+      1  100.0%          LazyCompile: ~ServiceAccountCredential /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/app/credential-internal.js:65:16
+      1  100.0%            LazyCompile: ~cert /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/app/credential-factory.js:100:14
+      1    2.0%      LazyCompile: ~parseUrlencoded /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/whatwg-url/lib/urlencoded.js:10:25
+      1  100.0%        LazyCompile: ~parseUrlencodedString /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/whatwg-url/lib/urlencoded.js:41:31
+      1  100.0%          LazyCompile: ~URLSearchParamsImpl /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/whatwg-url/lib/URLSearchParams-impl.js:5:14
+      1  100.0%            LazyCompile: ~exports.setup /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/whatwg-url/lib/URLSearchParams.js:62:17
+      1    2.0%      LazyCompile: ~parse /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs-parser/build/index.cjs:108:10
+      1  100.0%        LazyCompile: ~yargsParser.detailed /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs-parser/build/index.cjs:1043:33
+      1  100.0%          LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:56853
+      1  100.0%            LazyCompile: ~parse /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:39721
+      1    2.0%      LazyCompile: ~onceWrapper node:events:636:21
+      1  100.0%        Function: ^emit node:events:475:44
+      1  100.0%          LazyCompile: ~afterConnect node:net:1141:22
+      1    2.0%      LazyCompile: ~onConnectSecure node:_tls_wrap:1518:25
+      1  100.0%        Function: ^emit node:events:475:44
+      1  100.0%          LazyCompile: ~TLSSocket._finishInit node:_tls_wrap:920:43
+      1  100.0%            LazyCompile: ~ssl.onhandshakedone node:_tls_wrap:725:27
+      1    2.0%      LazyCompile: ~makeDocumentSegment /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/commands.js:371:24
+      1  100.0%        LazyCompile: ~toBin /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/commands.js:345:10
+      1  100.0%          LazyCompile: ~writeCommand /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/message_stream.js:40:17
+      1  100.0%            LazyCompile: ~write /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connection.js:403:15
+      1    2.0%      LazyCompile: ~listOnTimeout node:internal/timers:507:25
+      1  100.0%        LazyCompile: ~processTimers node:internal/timers:487:25
+      1    2.0%      LazyCompile: ~initializer /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/twilio/lib/index.js:9:27
+      1  100.0%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/src/services/twilio.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    2.0%      LazyCompile: ~initFirestore /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/firestore/firestore-internal.js:80:23
+      1  100.0%        LazyCompile: ~FirestoreService /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/firestore/firestore-internal.js:26:16
+      1  100.0%          LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/firestore/index.js:76:72
+      1  100.0%            LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/app/firebase-app.js:162:42
+      1    2.0%      LazyCompile: ~getPathFromURLPosix node:internal/url:1398:29
+      1  100.0%        LazyCompile: ~fileURLToPath node:internal/url:1416:23
+      1  100.0%          LazyCompile: ~finalizeEsmResolution node:internal/modules/cjs/loader:939:31
+      1  100.0%            Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      1    2.0%      LazyCompile: ~exports.is /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/whatwg-url/lib/URLSearchParams.js:13:14
+      1  100.0%        LazyCompile: ~keys /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/whatwg-url/lib/URLSearchParams.js:371:9
+      1  100.0%          LazyCompile: ~keys /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb-connection-string-url/lib/index.js:57:13
+      1  100.0%            LazyCompile: ~_normalizeKey /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb-connection-string-url/lib/index.js:26:18
+      1    2.0%      LazyCompile: ~exports.create /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/whatwg-url/lib/URLSearchParams.js:50:18
+      1  100.0%        LazyCompile: ~exports.createImpl /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/whatwg-url/lib/URLSearchParams.js:55:22
+      1  100.0%          LazyCompile: ~URLImpl /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/whatwg-url/lib/URL-impl.js:7:14
+      1  100.0%            LazyCompile: ~exports.setup /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/whatwg-url/lib/URL.js:49:17
+      1    2.0%      LazyCompile: ~executeWithServerSelection /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/operations/execute_operation.js:85:36
+      1  100.0%        LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/operations/execute_operation.js:16:48
+      1  100.0%          LazyCompile: ~maybePromise /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/utils.js:345:22
+      1  100.0%            LazyCompile: ~executeOperation /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/operations/execute_operation.js:11:26
+      1    2.0%      LazyCompile: ~deepCopy /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/utils/deep-copy.js:27:18
+      1  100.0%        LazyCompile: ~FirebaseApp /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/app/firebase-app.js:118:16
+      1  100.0%          LazyCompile: ~initializeApp /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/app/lifecycle.js:31:18
+      1  100.0%            LazyCompile: ~initializeApp /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/app/firebase-namespace.js:42:18
+      1    2.0%      LazyCompile: ~createTopology /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/operations/connect.js:44:24
+      1  100.0%        LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/operations/connect.js:32:67
+      1  100.0%          LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/connection_string.js:72:39
+      1  100.0%            LazyCompile: ~onresolve node:dns:207:19
+      1    2.0%      LazyCompile: ~createHash node:crypto:129:20
+      1  100.0%        LazyCompile: ~passwordDigest /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/auth/scram.js:182:24
+      1  100.0%          LazyCompile: ~continueScramConversation /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/auth/scram.js:93:35
+      1  100.0%            LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/auth/scram.js:85:80
+      1    2.0%      LazyCompile: ~afterWrite node:internal/streams/writable:487:20
+      1  100.0%        LazyCompile: ~onwrite node:internal/streams/writable:425:17
+      1  100.0%          LazyCompile: ~onWriteComplete node:internal/stream_base_commons:80:25
+      1    2.0%      LazyCompile: ~addAddress node:internal/blocklist:60:13
+      1  100.0%        Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    2.0%      LazyCompile: ~_write /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/message_stream.js:31:11
+      1  100.0%        LazyCompile: ~writeOrBuffer node:internal/streams/writable:365:23
+      1  100.0%          LazyCompile: ~_write node:internal/streams/writable:283:16
+      1  100.0%            LazyCompile: ~Writable.write node:internal/streams/writable:333:36
+      1    2.0%      LazyCompile: ~Xt /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:28448
+      1  100.0%        LazyCompile: ~fe.Yargs /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:61285
+      1  100.0%          LazyCompile: ~Argv /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/index.cjs:11:14
+      1  100.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/index.cjs:1:1
+      1    2.0%      LazyCompile: ~Transform.push /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/readable-stream/lib/_stream_transform.js:137:37
+      1  100.0%        LazyCompile: ~_transform /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/winston/lib/winston/logger.js:275:13
+      1  100.0%          LazyCompile: ~Transform._read /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/readable-stream/lib/_stream_transform.js:171:38
+      1  100.0%            LazyCompile: ~Transform._write /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/readable-stream/lib/_stream_transform.js:156:39
+      1    2.0%      LazyCompile: ~SchemaType /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/schematype.js:42:20
+      1  100.0%        LazyCompile: ~ObjectId /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/schema/objectid.js:27:18
+      1  100.0%          LazyCompile: ~Schema.interpretAsType /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/schema.js:1100:44
+      1  100.0%            LazyCompile: ~Schema.path /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/schema.js:832:33
+      1    2.0%      LazyCompile: ~SchemaStringOptions /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/options/SchemaStringOptions.js:18:1
+      1  100.0%        Function: ^SchemaType /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/schematype.js:42:20
+      1  100.0%          LazyCompile: ~SchemaString /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/schema/string.js:25:22
+      1  100.0%            LazyCompile: ~Schema.interpretAsType /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/schema.js:1100:44
+      1    2.0%      LazyCompile: ~Long.fromNumber /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/bson/lib/long.js:131:32
+      1  100.0%        Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/bson/lib/parser/deserializer.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    2.0%      LazyCompile: ~Logger /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/winston/lib/winston/logger.js:40:14
+      1  100.0%        LazyCompile: ~DerivedLogger /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/winston/lib/winston/create-logger.js:43:16
+      1  100.0%          LazyCompile: ~module.exports /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/winston/lib/winston/create-logger.js:25:27
+      1  100.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/winston/lib/winston.js:1:1
+      1    2.0%      LazyCompile: ~Firestore /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@google-cloud/firestore/build/src/index.js:371:16
+      1  100.0%        LazyCompile: ~initFirestore /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/firestore/firestore-internal.js:80:23
+      1  100.0%          LazyCompile: ~FirestoreService /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/firestore/firestore-internal.js:26:16
+      1  100.0%            LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/firebase-admin/lib/firestore/index.js:76:72
+      1    2.0%      LazyCompile: ~BinMsg /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/commands.js:394:16
+      1  100.0%        Function: ^processIncomingData /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/message_stream.js:84:29
+      1  100.0%          Function: ^_write /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/message_stream.js:31:11
+      1  100.0%            Function: ^writeOrBuffer node:internal/streams/writable:365:23
+      1    2.0%      LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:48230
+      1  100.0%        LazyCompile: ~parse /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:39721
+      1  100.0%          LazyCompile: ~get /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:61383
+      1  100.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/src/config/configConst.js:1:1
+      1    2.0%      LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:47801
+      1  100.0%        LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:48168
+      1  100.0%          LazyCompile: ~describe /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:34410
+      1  100.0%            LazyCompile: ~addHelpOpt /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/yargs/build/index.cjs:1:29439
+      1    2.0%      LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/object-assign/index.js:41:63
+      1  100.0%        t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      1  100.0%          LazyCompile: ~shouldUseNative /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/object-assign/index.js:21:25
+      1  100.0%            Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/object-assign/index.js:1:1
+      1    2.0%      LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/helpers/query/applyQueryMiddleware.js:64:13
+      1  100.0%        t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+      1  100.0%          LazyCompile: ~applyQueryMiddleware /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/helpers/query/applyQueryMiddleware.js:27:30
+      1  100.0%            LazyCompile: ~compile /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongoose/lib/model.js:4974:33
+      1    2.0%      LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/auth/scram.js:152:83
+      1  100.0%        LazyCompile: ~onMessage /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connection.js:156:14
+      1  100.0%          LazyCompile: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/mongodb/lib/cmap/connection.js:60:44
+      1  100.0%            Function: ^emit node:events:475:44
+      1    2.0%      Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/graceful-fs/graceful-fs.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    2.0%      Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/follow-redirects/index.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    2.0%      Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/finalhandler/index.js:1:1
+      1  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1    2.0%      Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/color/node_modules/color-convert/conversions.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    2.0%      Function: ~<anonymous> /Users/AguS/Documents/Code/Coder House/Back/clase36/node_modules/@dabh/diagnostics/node/development.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+
+     49    1.5%  t node::fs::InternalModuleStat(v8::FunctionCallbackInfo<v8::Value> const&)
+     49  100.0%    t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+     49  100.0%      Function: ^stat node:internal/modules/cjs/loader:151:14
+     30   61.2%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+     28   93.3%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+     28  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2    6.7%          LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2  100.0%            LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+     19   38.8%        Function: ^tryFile node:internal/modules/cjs/loader:384:17
+     19  100.0%          Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+     18   94.7%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1    5.3%            Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+
+     44    1.4%  t node::fs::Open(v8::FunctionCallbackInfo<v8::Value> const&)
+     44  100.0%    t std::__1::unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*>, std::__1::__hash_node_destructor<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, void*> > > > std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > > > >::__construct_node<char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> > >(char const*&, std::__1::unique_ptr<v8::ScriptCompiler::CachedData, std::__1::default_delete<v8::ScriptCompiler::CachedData> >&&)
+     43   97.7%      Function: ^openSync node:fs:576:18
+     43  100.0%        Function: ^readFileSync node:fs:450:22
+     43  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     43  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    2.3%      LazyCompile: ~openSync node:fs:576:18
+      1  100.0%        LazyCompile: ~readFileSync node:fs:450:22
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+

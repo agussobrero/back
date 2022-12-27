@@ -12,7 +12,9 @@ ingresoSms = async (name) => {
                 to: MY_PHONE,
                 body: `Acabas de ingresar a tu cuenta ${name}`
             }
-        )
+            )
+            .then((res) => logger.log("info", `Mensaje Enviado`))
+            .catch(err => logger.log("error", `Ocurrió un error con Nodemailer: ${err}`))
     } catch (err) {
         logger.log("error", `Ocurrió un error con Twilio y SMS: ${err}`)
     }
@@ -26,7 +28,9 @@ ingresoWhatsapp = async (name) => {
                 to: `whatsapp:${MY_PHONE}`,
                 body: `Acabas de ingresar a tu cuenta ${name}`
             }
-        )
+            )
+            .then((res) => logger.log("info", `Mensaje Enviado`))
+            .catch(err => logger.log("error", `Ocurrió un error con Nodemailer: ${err}`))
     } catch (err) {
         logger.log("error", `Ocurrió un error con Twilio y Whatsapp: ${err}`)
     }
@@ -36,8 +40,8 @@ const transport = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
     auth: {
-        user: "as.consultoring@gmail.com",
-        pass: "qnvovpqxvsvlmnrf"
+        user: MY_MAIL,
+        pass: KEY_MAIL
     }
 })
 
@@ -47,12 +51,14 @@ const mailOptions = {
     to: recipient,
     from: MY_MAIL,
     subject: "Prueba desde Node",
-    html: `<h1>Recuerda visitarnos Pronto!!!</h1>`
+    html: `<h1>Recuerda visitarnos Pronto2!!!</h1>`
 }
 
 publiMail = async (name) => {
     try {
         const info = await transport.sendMail(mailOptions)
+        .then((res) => logger.log("info", `Mail Enviado`))
+        .catch(err => logger.log("error", `Ocurrió un error con Nodemailer: ${err}`))
     } catch (err) {
         logger.log("error", `Ocurrió un error con Nodemailer: ${err}`)
     }

@@ -51,6 +51,7 @@ app.use("/auth", routerAuth)
 if (MODE === "cluster" && cluster.isMaster) {
     for (let i = 0; i < numCPUs.length; i++) {
         cluster.fork();
+        console.log(cluster.fork)
     }
     cluster.on("exit", (worker) => {
         logger.log("warn", `worker caido nº: ${cluster.process.id}`)

@@ -104,3 +104,8 @@
 {"level":"error","message":"Ocurrió un error con Twilio y Whatsapp: Error: The 'To' number whatsapp: +543512354676 is not a valid phone number."}
 {"level":"error","message":"Ocurrió un error con Twilio y Whatsapp: Error: The 'To' number whatsapp: +5493512354676 is not a valid phone number."}
 {"level":"error","message":"Ocurrió un error con Twilio y SMS: Error: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers."}
+{"level":"error","message":"Ocurrió un error con Twilio y SMS: TypeError: {(intermediate value)(intermediate value)(intermediate value)}.then is not a function"}
+{"level":"error","message":"Ocurrió un error con Twilio y Whatsapp: TypeError: {(intermediate value)(intermediate value)(intermediate value)}.then is not a function"}
+{"level":"error","message":"Ocurrió un error con Nodemailer: Error: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers."}
+{"level":"error","message":"Ocurrió un error con Nodemailer: Error: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers."}
+{"level":"error","message":"Ocurrió un error con Nodemailer: Error: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers."}
