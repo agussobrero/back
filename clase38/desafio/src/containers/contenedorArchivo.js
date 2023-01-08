@@ -28,7 +28,7 @@ class ContenedorArchivo{
         }
         this.contenedor.push(object);
         this._saveAll(this.contenedor);
-        return object.id;
+        return object;
     }
 
     getById(id) {

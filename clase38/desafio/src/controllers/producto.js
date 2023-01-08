@@ -26,6 +26,7 @@ function getProductById (req, res) {
         res.status(404).json({mensaje: "producto no encontrado"})
     }
     res.json(_result)
+    
 }
 
 function updateProductById (req, res) {
@@ -49,10 +50,16 @@ function deleteById (req, res) {
     res.json(_result)
 }
 
+function showProdutoView (req, res) {
+    const productos = ProductoService.readAll()
+    res.render("productos", {productos})
+}
+
 module.exports = {
     getAllProducts,
     addNewProduct,
     getProductById,
     updateProductById,
-    deleteById
+    deleteById,
+    showProdutoView
 }

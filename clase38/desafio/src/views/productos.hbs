@@ -1,0 +1,23 @@
+<h1>Productos Almacenados</h1>
+<table>
+    {{#each productos}}
+    <tr>
+        <td>ID: {{id}}</td>
+        <td>Nombre: {{name}}</td>
+        <td>Precio: {{price}}</td>
+    </tr>
+    {{/each}}
+</table>
+
+<h2>Registro de Nuevo Producto</h2>
+    <form action="/productos"  method="POST" id="ingresarProducto">
+        <input type="text" name="id" id="id" placeholder="ID Producto">
+        <br><br>
+        <input type="text" name="name" id="name" placeholder="Nombre Producto">
+        <br><br>
+        <input type="text" name="price" id="price" placeholder="Precio Producto">
+        <br><br>
+        <label for="submit"></label>
+        <input type="submit" value="Agregar Producto" class="submit"/>
+    </form>
+    <div id="productos"></div>

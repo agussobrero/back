@@ -49,10 +49,16 @@ function deleteById (req, res) {
     res.json(_result)
 }
 
+function showMensajeView (req, res) {
+    const mensajes = MensajeService.readAll()
+    res.render("mensajes", {mensajes})
+}
+
 module.exports = {
     getAllMessages,
     addNewMessage,
     getMessageById,
     updateMessageById,
-    deleteById
+    deleteById,
+    showMensajeView
 }

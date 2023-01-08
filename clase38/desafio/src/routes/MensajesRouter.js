@@ -5,13 +5,16 @@ const {
     addNewMessage,
     getMessageById,
     updateMessageById,
-    deleteById
+    deleteById,
+    showMensajeView 
 } = require("../controllers/mensaje")
+const isAuth = require("../middlewares/isAuth")
 
 MensajesRouter.get("/", getAllMessages)
-MensajesRouter.post("/", addNewMessage)
+MensajesRouter.post("/", isAuth, addNewMessage)
 MensajesRouter.get("/:id", getMessageById)
-MensajesRouter.put("/:id", updateMessageById)
-MensajesRouter.delete("/:id", deleteById)
+MensajesRouter.put("/:id", isAuth, updateMessageById)
+MensajesRouter.delete("/:id", isAuth, deleteById)
+MensajesRouter.get("/view/mensajes", showMensajeView)
 
 module.exports = MensajesRouter

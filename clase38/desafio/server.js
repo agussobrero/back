@@ -2,8 +2,8 @@ const express = require("express")
 const {Server: HTTPServer} = require("http")
 /* const {Server: SocketServer} = require("socket.io") */
 const { urlencoded } = require("express")
-const dotenv = require("dotenv")
-dotenv.config()
+const { PORT } = require("./src/config/config")
+const hbs = require("./src/views/config/index")
 
 const app = express()
 
@@ -11,11 +11,17 @@ const app = express()
 const ProductosRouter = require("./src/routes/ProductosRouter")
 const MensajesRouter = require("./src/routes/MensajesRouter")
 
+
+//Engine
+app.engine("hbs", hbs.engine)
+app.set("views", "./src/views/")
+app.set("view engine", "hbs")
+
 /* const Contenedor = require ("./src/containers/contenedorProducto")
 const productos = new Contenedor("./productos.json")
 const mensajes = new Contenedor("./mensajes.json") */
 
-app.use(express.static("public"))
+/* app.use(express.static("public")) */
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
@@ -51,7 +57,6 @@ app.get("/", (req, res) => {
     })
 }) */
 
-const PORT = process.env.PORT || 3000
 httpServer.listen((PORT), () => {
     console.log(`Conectado al puerto: ${PORT}`)
 })

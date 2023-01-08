@@ -5,13 +5,16 @@ const {
     addNewProduct,
     getProductById,
     updateProductById,
-    deleteById
-} = require("../controllers/producto")
+    deleteById,
+    showProdutoView
+} = require("../controllers/producto")  
+const isAuth = require("../middlewares/isAuth")
 
 ProductosRouter.get("/", getAllProducts)
-ProductosRouter.post("/", addNewProduct)
+ProductosRouter.post("/"/* , isAuth */ ,addNewProduct)
 ProductosRouter.get("/:id", getProductById)
-ProductosRouter.put("/:id", updateProductById)
-ProductosRouter.delete("/:id", deleteById)
+ProductosRouter.put("/:id", isAuth ,updateProductById)
+ProductosRouter.delete("/:id", isAuth, deleteById)
+ProductosRouter.get("/view/productos", showProdutoView)
 
 module.exports = ProductosRouter
