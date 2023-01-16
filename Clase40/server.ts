@@ -28,7 +28,7 @@ app.set("view engine", "hbs")
 const productos = new Contenedor("./productos.json")
 const mensajes = new Contenedor("./mensajes.json") */
 
-/* app.use(express.static("public")) */
+app.use(express.static("public"))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 

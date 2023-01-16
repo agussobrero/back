@@ -9,7 +9,6 @@ export class ProductoRepository {
     }
     getAll(){
         const productos: typeof ProductoDTO = this.productoDao.getAll()
-        console.log(productos)
     }
     getById(id: string){
         const producto: typeof ProductoDTO = this.productoDao.getById(id)
