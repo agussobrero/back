@@ -1,0 +1,4 @@
+{"level":"error","message":"Ocurrió un error: TypeError: this.Model.find is not a function"}
+{"level":"error","message":"Ocurrió un error: TypeError: this.Model is not a constructor"}
+{"level":"error","message":"Ocurrió un error: TypeError: this.Model.find is not a function"}
+{"level":"error","message":"Ocurrió un error: TypeError: this.Model.find is not a function"}

@@ -1,0 +1,67 @@
+[
+  {
+    "id": 101,
+    "name": "cbd cream",
+    "price": 2300
+  },
+  {
+    "id": 303,
+    "name": "thc balm",
+    "price": 10500
+  },
+  {
+    "id": 202,
+    "name": "thc balm",
+    "price": 8400
+  },
+  {
+    "id": 606,
+    "name": "cbd balm",
+    "price": 12000
+  },
+  {
+    "id": 606,
+    "name": "cbd balm",
+    "price": 12000
+  },
+  {
+    "id": 606,
+    "name": "cbd balm",
+    "price": 12000
+  },
+  {
+    "id": 606,
+    "name": "cbd balm",
+    "price": 12000
+  },
+  {
+    "id": 606,
+    "name": "cbd balm",
+    "price": 12000
+  },
+  {
+    "id": 707,
+    "name": "cbd balm",
+    "price": 12000
+  },
+  {
+    "id": 808,
+    "name": "cbd balm",
+    "price": 12000
+  },
+  {
+    "id": "505",
+    "name": "thcGummies",
+    "price": "8600"
+  },
+  {
+    "id": "606",
+    "name": "cbdGummies",
+    "price": "9200"
+  },
+  {
+    "id": "707",
+    "name": "thcBomb",
+    "price": "12000"
+  }
+]
