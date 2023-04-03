@@ -1,0 +1,23 @@
+<h1>Mensajes Almacenados</h1>
+<table>
+    {{#each mensajes}}
+    <tr>
+        <td>ID: {{id}}</td>
+        <td>Email: {{email}}</td>
+        <td>Mensaje: {{message}}</td>
+    </tr>
+    {{/each}}
+</table>
+
+<h2>Registro de Nuevo Mensaje</h2>
+    <form action="/mensajes"  method="POST" id="ingresarMensaje">
+        <input type="text" name="id" id="id" placeholder="ID Mensaje">
+        <br><br>
+        <input type="text" name="email" id="email" placeholder="Email">
+        <br><br>
+        <input type="text" name="message" id="message" placeholder="Mensaje">
+        <br><br>
+        <label for="submit"></label>
+        <input type="submit" value="Agregar Mensaje" class="submit"/>
+    </form>
+    <div id="mensajes"></div>
