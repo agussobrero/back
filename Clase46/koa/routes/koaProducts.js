@@ -17,7 +17,7 @@ productRouter.get("/", async (ctx)=>{
 productRouter.post("/", async (ctx)=>{
     const object = ctx.request.body
     const newProd = await ProductDAO.save(object)
-    if(newProd !== null) {
+    if(!newProd) {
         ctx.status=404
     } else {
         ctx.body = newProd
