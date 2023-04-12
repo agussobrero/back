@@ -1,10 +1,9 @@
 {
   "$schema": "https://deno.land/x/denon@2.5.0/schema.json",
   "scripts": {
-    "start": {
-      "cmd": "deno run --allow-net index.ts",
-      "desc": "run my app.ts file"
-    }
+    "start": "deno run --allow-net index.ts",
+    "install": "curl -fsSL https://deno.land/x/install/install.sh | sh", 
+    "export": "export PATH=/Users/AguS/.deno/bin:$PATH"
   },
   "deno.enable": true,
   "deno.suggest.imports.host": {
