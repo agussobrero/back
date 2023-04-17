@@ -1,11 +1,12 @@
 import { MongoClient } from "../deps.ts"
 import { Producto } from "./schemas/index.ts"
+import { DATABASE_PASSWORD, DATABASE_USER, DATABASE_NAME, DATABASE_CLUSTER } from "../config/config.ts"
 
-export const client = new MongoClient()
+const client = new MongoClient()
 
 try {
     await client.connect(
-        "mongodb+srv://agussobrero:xpZFIMrxekWrDNMA@cluster0.7znzdl8.mongodb.net/clase48?authMechanism=SCRAM-SHA-1",
+        `mongodb+srv://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_CLUSTER}/${DATABASE_NAME}?authMechanism=SCRAM-SHA-1`,
         console.log('conectado con Deno')
     )
 } catch (error) {

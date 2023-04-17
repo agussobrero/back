@@ -1,7 +1,7 @@
 {
   "$schema": "https://deno.land/x/denon@2.5.0/schema.json",
   "scripts": {
-    "start": "deno run --allow-net index.ts",
+    "start": "deno run --allow-net --allow-read --allow-env index.ts",
     "install": "curl -fsSL https://deno.land/x/install/install.sh | sh", 
     "export": "export PATH=/Users/AguS/.deno/bin:$PATH"
   },
@@ -9,5 +9,8 @@
   "deno.suggest.imports.host": {
     "https://deno.land": true
   },
-  "allowImportingTsExtensions": true
+  "compilerOptions": {
+    "allowImportingTsExtensions": "iKnowWhatImDoing",
+    "moduleResolution": "bundler"
+  }
 }
